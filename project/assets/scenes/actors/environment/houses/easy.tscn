@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6n5lohsjvjc2"]
+
+[ext_resource type="Texture2D" uid="uid://d24vdpcad58cb" path="res://assets/resources/media/images/environment/houses/easy.png" id="1_o0mp1"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/blocks/background.gd" id="1_r3r7y"]
+
+[node name="house" type="Node2D"]
+script = ExtResource("1_r3r7y")
+
+[node name="view" type="Sprite2D" parent="."]
+texture = ExtResource("1_o0mp1")

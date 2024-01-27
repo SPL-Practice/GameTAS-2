@@ -11,7 +11,7 @@ func check_out_of_bounds() -> void:
 	var first = storage.get_first()
 	var edge = first.get_center() + offset
 	
-	if first.position.z > edge:
+	if first.position.x > edge:
 		var last = storage.get_last()
 		var block = generator.generate()
 		storage.drop_front()
@@ -21,4 +21,4 @@ func check_out_of_bounds() -> void:
 func progress(speed) -> void:
 	check_out_of_bounds()
 	for block in storage.rendering:
-		block.position.z += speed
+		block.position.x += speed
