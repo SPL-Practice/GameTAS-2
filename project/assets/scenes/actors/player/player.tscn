@@ -58,3 +58,6 @@ offset_right = 537.0
 offset_bottom = 283.0
 to_hide = NodePath("../flue")
 to_show = NodePath("../warp")
+
+[connection signal="body_entered" from="flue" to="flue" method="_on_receive"]
+[connection signal="body_entered" from="warp" to="warp" method="_on_player_collide"]
