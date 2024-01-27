@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 # Render speed and keeping count
 @export var obstacles_far: int = 6

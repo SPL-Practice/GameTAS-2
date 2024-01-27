@@ -11,7 +11,7 @@ func fill_space(storage, generator, offset: Vector3i, count: int) -> void:
 		
 		if index == 0:
 			var edge = block.get_center() + offset.x + offset.z
-			block.position.z = edge
+			block.position.x = edge
 			storage.add_block(block)
 		else:
 			var current = storage.get_current(index)

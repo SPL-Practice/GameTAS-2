@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://fm3mlkh7a0yq"]
+[gd_scene load_steps=6 format=3 uid="uid://fm3mlkh7a0yq"]
 
 [ext_resource type="PackedScene" uid="uid://ccufp1wy8r5da" path="res://assets/scenes/actors/controllers/generators/air.tscn" id="1_dawhx"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/progression/terrain.gd" id="1_y34es"]
 [ext_resource type="PackedScene" uid="uid://tfa1cpk6v7en" path="res://assets/scenes/actors/controllers/conveyor/conveyor.tscn" id="2_4rpl7"]
+[ext_resource type="PackedScene" uid="uid://b34j6uaxdoqp2" path="res://assets/scenes/actors/controllers/generators/forest.tscn" id="3_ht1ru"]
+[ext_resource type="PackedScene" uid="uid://bd8qkux8xlo36" path="res://assets/scenes/actors/controllers/generators/houses.tscn" id="4_qpj6u"]
 
-[node name="blocks" type="Node2D"]
+[node name="belts" type="Node2D"]
+script = ExtResource("1_y34es")
 
 [node name="air" parent="." instance=ExtResource("2_4rpl7")]
 
 [node name="generator" parent="air" instance=ExtResource("1_dawhx")]
 
-[node name="forest" type="Node2D" parent="."]
+[node name="forest" parent="." instance=ExtResource("2_4rpl7")]
 
-[node name="houses" type="Node2D" parent="."]
+[node name="generator" parent="forest" instance=ExtResource("3_ht1ru")]
+
+[node name="houses" parent="." instance=ExtResource("2_4rpl7")]
+
+[node name="generator" parent="houses" instance=ExtResource("4_qpj6u")]

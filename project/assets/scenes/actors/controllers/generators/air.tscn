@@ -7,4 +7,4 @@
 script = ExtResource("1_qa0wd")
 
 [node name="loader" parent="." instance=ExtResource("2_6dtv3")]
-files = "res://assets/scenes/actors/environment/houses"
+files = "res://assets/scenes/actors/environment/air"
