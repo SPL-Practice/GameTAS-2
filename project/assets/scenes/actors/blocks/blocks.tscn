@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://fm3mlkh7a0yq"]
+
+[ext_resource type="PackedScene" uid="uid://ccufp1wy8r5da" path="res://assets/scenes/actors/controllers/generators/air.tscn" id="1_dawhx"]
+[ext_resource type="PackedScene" uid="uid://tfa1cpk6v7en" path="res://assets/scenes/actors/controllers/conveyor/conveyor.tscn" id="2_4rpl7"]
+
+[node name="blocks" type="Node2D"]
+
+[node name="air" parent="." instance=ExtResource("2_4rpl7")]
+
+[node name="generator" parent="air" instance=ExtResource("1_dawhx")]
+
+[node name="forest" type="Node2D" parent="."]
+
+[node name="houses" type="Node2D" parent="."]

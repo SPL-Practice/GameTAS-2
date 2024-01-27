@@ -1,13 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=4 format=3 uid="uid://csyhrwdkvxwn3"]
 
+[ext_resource type="PackedScene" uid="uid://b7mst7ki2ircs" path="res://assets/scenes/actors/player/player.tscn" id="1_fensh"]
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
+[ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/blocks/blocks.tscn" id="2_c55r2"]
 
 [node name="main" type="Node"]
 
 [node name="camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="player" parent="." instance=ExtResource("1_fensh")]
+
+[node name="blocks" parent="." instance=ExtResource("2_c55r2")]
+
 [node name="ui" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

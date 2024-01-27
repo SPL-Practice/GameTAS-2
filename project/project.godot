@@ -14,6 +14,16 @@ config/name="GameTAS-2"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://assets/scripts/system/global.gd"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Present"
+2d_physics/layer_3="Flue"
+
 [rendering]
 
 renderer/rendering_method="mobile"

@@ -1,7 +1,7 @@
-extends Node3D
+extends Node2D
 
 # Storage controls rendering scene nodes
-var rendering: Array[Node3D] = []
+var rendering: Array[Node2D] = []
 var order = 0
 
 func get_current(index: int):

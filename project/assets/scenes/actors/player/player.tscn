@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7mst7ki2ircs"]
+
+[ext_resource type="Shape2D" uid="uid://cg52xsf5iad25" path="res://assets/resources/runtime/templates/geometry/present.tres" id="1_2hijm"]
+[ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_1pqe6"]
+
+[node name="player" type="Node2D"]
+
+[node name="present" type="AnimatableBody2D" parent="."]
+position = Vector2(560, 121)
+
+[node name="shape" type="CollisionShape2D" parent="present"]
+shape = ExtResource("1_2hijm")
+
+[node name="flue" type="Area2D" parent="."]
+position = Vector2(537, 283)
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="flue"]
+position = Vector2(24, 0)
+shape = ExtResource("2_1pqe6")
+
+[node name="warp" type="Area2D" parent="."]
+position = Vector2(539, 343)
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="warp"]
+position = Vector2(24, 0)
+shape = ExtResource("2_1pqe6")
