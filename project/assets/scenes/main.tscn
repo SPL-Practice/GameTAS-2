@@ -14,7 +14,9 @@ anchor_mode = 0
 [node name="player" parent="." instance=ExtResource("1_fensh")]
 
 [node name="blocks" parent="." instance=ExtResource("2_c55r2")]
-position = Vector2(219, 303)
+position = Vector2(565, 303)
+drawing_far = Vector3i(10, 10, 10)
+conveyor_speed = Vector3i(1, 1, 1)
 
 [node name="ui" type="Control" parent="."]
 visible = false

@@ -5,5 +5,5 @@ extends Node
 func _ready():
 	blocks.fill_space();
 
-#func _physics_process(_deltsa):
-#	blocks.progress();
+func _physics_process(_delta):
+	blocks.progress();

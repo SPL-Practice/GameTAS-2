@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Global="*res://assets/scripts/system/global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
 [layer_names]
 
 2d_physics/layer_1="World"
@@ -28,3 +33,4 @@ Global="*res://assets/scripts/system/global.gd"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.1875, 0.210938, 0.230469, 1)

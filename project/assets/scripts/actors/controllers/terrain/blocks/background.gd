@@ -8,10 +8,12 @@ func get_view():
 	return view
 
 func get_center():
-	return view.texture.get_width() / 2
+	#view.texture.get_width() / 2
+	var width = view.get_rect().size.x
+	return width * view.scale.x / 2
 	
 func append_to_edge(target: Node2D, interval: float) -> void:
-	var y = target.position.y
+	var x = target.position.x
 	var center = target.get_center()
 	var append = get_center()
-	position.y = y - center - append - interval
+	position.x = x - center - append - interval
