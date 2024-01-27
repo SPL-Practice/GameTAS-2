@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://k365ytqxu3ys"]
+
+[ext_resource type="Script" path="res://assets/scripts/system/ui/elements/core/switcher/same.gd" id="1_krloy"]
+
+[node name="on_off" type="Node"]
+script = ExtResource("1_krloy")

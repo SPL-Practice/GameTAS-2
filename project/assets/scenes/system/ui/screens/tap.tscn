@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqgjoondglfex"]
+
+[ext_resource type="Theme" uid="uid://beyh03xa5x65p" path="res://assets/resources/runtime/themes/regular.tres" id="1_ntcc2"]
+
+[node name="tap" type="Button"]
+modulate = Color(1, 1, 1, 0.823529)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ntcc2")
+text = "Tap to start!"
