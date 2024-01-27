@@ -17,12 +17,12 @@ script = ExtResource("1_jyepa")
 [node name="camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="player" parent="." instance=ExtResource("1_fensh")]
-
 [node name="blocks" parent="." instance=ExtResource("2_c55r2")]
 position = Vector2(565, 303)
 drawing_far = Vector3i(10, 6, 4)
 conveyor_speed = Vector3i(1, 2, 2)
+
+[node name="player" parent="." instance=ExtResource("1_fensh")]
 
 [node name="ui" type="Control" parent="."]
 process_mode = 3
@@ -52,7 +52,9 @@ layout_mode = 1
 [node name="pause" parent="." instance=ExtResource("5_gdrto")]
 
 [node name="tree" parent="pause" instance=ExtResource("6_j2vgm")]
+initial = true
 
-[connection signal="pressed" from="ui/tap" to="pause/tree" method="_pause_process"]
 [connection signal="pressed" from="ui/tap" to="ui/tap/on_off" method="switch"]
+[connection signal="pressed" from="ui/tap" to="pause/tree" method="_pause_process"]
+[connection signal="on_receive" from="pause" to="ui/tap/on_off" method="switch"]
 [connection signal="on_receive" from="pause" to="pause/tree" method="_pause_process"]

@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ewhcc1qdwbky"]
+[gd_scene load_steps=3 format=3 uid="uid://ewhcc1qdwbky"]
 
 [ext_resource type="Shortcut" uid="uid://gwvblu3dti2y" path="res://assets/resources/runtime/templates/macro/shortcuts/screen.tres" id="1_ks4l3"]
-[ext_resource type="Texture2D" uid="uid://ocyxbostk612" path="res://assets/resources/media/images/textures/ui/screen/normal.svg" id="2_ghv8e"]
-[ext_resource type="Texture2D" uid="uid://877wx1dk7y0i" path="res://assets/resources/media/images/textures/ui/screen/hover.svg" id="3_mjk81"]
 [ext_resource type="Script" path="res://assets/scripts/system/ui/screen/fullscreen.gd" id="4_3gm4j"]
 
 [node name="fullscreen" type="MarginContainer"]
@@ -27,8 +25,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 shortcut = ExtResource("1_ks4l3")
-texture_normal = ExtResource("2_ghv8e")
-texture_hover = ExtResource("3_mjk81")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_3gm4j")

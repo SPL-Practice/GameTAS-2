@@ -1,6 +1,7 @@
 extends Node2D
 
-var hero: Node2D
+signal hit
+
 var is_paused: bool = true
 
 @onready var view = $present
@@ -9,16 +10,17 @@ var is_paused: bool = true
 
 func _input(e):
 	blackboard.set_value('event', e)
-	movement.tick(hero, blackboard)
+	movement.tick(self, blackboard)
 
 func _ready():
-	blackboard.set_value('swipe', 'swiped')
-	blackboard.set_value('drag', false)
 	blackboard.set_value('event', null)
+	#blackboard.set_value('swipe', 'swiped')
+	#blackboard.set_value('drag', false)
+	blackboard.set_value('present', false)
 
 func pause():
 	if (is_paused):
-		view.stop(true)
+		view.stop(false)
 	else:
 		view.play()
 	

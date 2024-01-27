@@ -1,6 +1,6 @@
 extends Node
 
-@export var to_switch: Control
+@export var to_switch: CanvasItem
 @export var switch_path: String
 
 func _ready():

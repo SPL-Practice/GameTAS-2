@@ -1,7 +1,6 @@
 extends Control
 
 @onready var current: Label = $current
-@export var retry: String
 
 func _ready():
 	set_score()

@@ -1,40 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7mst7ki2ircs"]
+[gd_scene load_steps=10 format=3 uid="uid://b7mst7ki2ircs"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/view/doll.gd" id="1_aie5i"]
-[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/hero.gd" id="1_bf62e"]
 [ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_1pqe6"]
 [ext_resource type="SpriteFrames" uid="uid://eyp4qyyalsyw" path="res://assets/resources/media/video/frames/player_model.tres" id="2_rxrol"]
 [ext_resource type="PackedScene" uid="uid://dpji5fu40yt6w" path="res://assets/scenes/actors/player/present.tscn" id="3_j15gv"]
+[ext_resource type="PackedScene" uid="uid://bu40m17qroydn" path="res://assets/scenes/actors/behavior/movement/movement.tscn" id="5_ks4n7"]
+[ext_resource type="Script" path="res://addons/godot-behavior-tree-plugin/blackboard.gd" id="5_rxukr"]
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/score.gd" id="6_ytu4v"]
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/collision.gd" id="8_5441i"]
+[ext_resource type="PackedScene" uid="uid://c6lem6oishv1g" path="res://assets/scenes/system/ui/elements/core/switcher/switcher.tscn" id="9_dmgk2"]
 
 [node name="player" type="Node2D"]
-script = ExtResource("1_bf62e")
 
 [node name="doll" type="Node2D" parent="."]
 script = ExtResource("1_aie5i")
 
 [node name="present" parent="doll" instance=ExtResource("3_j15gv")]
+collision_mask = 5
+score_path = "../../../ui/score"
 
 [node name="model" type="AnimatedSprite2D" parent="doll"]
 position = Vector2(601, 103)
 scale = Vector2(0.1, 0.1)
 sprite_frames = ExtResource("2_rxrol")
 autoplay = "default"
-frame_progress = 0.695748
+frame_progress = 0.026282
+
+[node name="blackboard" type="Node" parent="doll"]
+script = ExtResource("5_rxukr")
+
+[node name="movement" parent="doll" instance=ExtResource("5_ks4n7")]
 
 [node name="flue" type="Area2D" parent="."]
 position = Vector2(537, 283)
-collision_layer = 0
 collision_mask = 2
+script = ExtResource("6_ytu4v")
 
 [node name="shape" type="CollisionShape2D" parent="flue"]
 position = Vector2(24, 0)
 shape = ExtResource("2_1pqe6")
 
 [node name="warp" type="Area2D" parent="."]
+visible = false
 position = Vector2(537, 283)
-collision_layer = 0
+collision_layer = 4
 collision_mask = 2
+script = ExtResource("8_5441i")
 
 [node name="shape" type="CollisionShape2D" parent="warp"]
 position = Vector2(24, 0)
 shape = ExtResource("2_1pqe6")
+
+[node name="switcher" parent="." node_paths=PackedStringArray("to_hide", "to_show") instance=ExtResource("9_dmgk2")]
+offset_left = 537.0
+offset_top = 283.0
+offset_right = 537.0
+offset_bottom = 283.0
+to_hide = NodePath("../flue")
+to_show = NodePath("../warp")

@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://dx8ulouwush12" path="res://assets/resources/runtime/themes/caption.tres" id="1_0lwxb"]
 [ext_resource type="Theme" uid="uid://cakxia6pcud44" path="res://assets/resources/runtime/themes/sub.tres" id="2_cg45q"]
 [ext_resource type="Script" path="res://assets/scripts/system/ui/elements/options/coat.gd" id="2_gam46"]
-[ext_resource type="Texture2D" uid="uid://mdg5gxg5deak" path="res://assets/resources/media/images/icon/icon.svg" id="2_gjsui"]
 [ext_resource type="Shortcut" uid="uid://bqjg8wnpe5jmb" path="res://assets/resources/runtime/templates/macro/shortcuts/common/confirm.tres" id="2_qhul1"]
+[ext_resource type="Texture2D" uid="uid://bi3nr4na2yqxn" path="res://icon.svg" id="4_otmmt"]
 
 [node name="highscore" type="Button"]
 custom_minimum_size = Vector2(0, 65)
@@ -30,7 +30,7 @@ theme_override_constants/margin_right = 20
 custom_minimum_size = Vector2(65, 65)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("2_gjsui")
+texture = ExtResource("4_otmmt")
 expand_mode = 3
 
 [node name="text" type="VBoxContainer" parent="margin"]

@@ -1,9 +1,9 @@
 extends Node
 
-@export var to_hide: Control
+@export var to_hide: CanvasItem
 @export var hide_path: String
 
-@export var to_show: Control
+@export var to_show: CanvasItem
 @export var show_path: String
 
 func _ready():
