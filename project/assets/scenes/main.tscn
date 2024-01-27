@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=2 format=3 uid="uid://csyhrwdkvxwn3"]
 
-[node name="main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
+
+[node name="main" type="Node"]
 
 [node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="score" parent="ui" instance=ExtResource("1_fqsid")]
+layout_mode = 1
