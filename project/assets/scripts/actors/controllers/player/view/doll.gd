@@ -1,8 +1,9 @@
-extends Node3D
+extends Node2D
 
-var hero: CharacterBody3D
+var hero: Node2D
+var is_paused: bool = true
 
-@onready var view = $view
+@onready var view = $present
 @onready var blackboard = $blackboard
 @onready var movement = $movement
 
@@ -12,31 +13,13 @@ func _input(e):
 
 func _ready():
 	blackboard.set_value('swipe', 'swiped')
-	blackboard.set_value('running', ERR_BUSY)
 	blackboard.set_value('drag', false)
 	blackboard.set_value('event', null)
-	set_floor(true)
-
-
-func set_floor(on_floor: bool):
-	blackboard.set_value('is_on_floor', on_floor)
-
-func jump():
-	blackboard.set_value('swipe', 'swiped')
-	view.act("jump")
-	set_floor(false)
-
-func is_jumping():
-	return blackboard.get_value('swipe') == 'up'
-
-func is_running():
-	return blackboard.get_value('running') == OK
 
 func pause():
-	var running = blackboard.get_value('running')
-	if (running == OK):
-		blackboard.set_value('running', ERR_BUSY)
-		view.interrupt('stop')
+	if (is_paused):
+		view.stop(true)
 	else:
-		blackboard.set_value('running', OK)
-		view.interrupt('active')
+		view.play()
+	
+	is_paused = !is_paused

@@ -8,7 +8,6 @@ func get_view():
 	return view
 
 func get_center():
-	#view.texture.get_width() / 2
 	var width = view.get_rect().size.x
 	return width * view.scale.x / 2
 	

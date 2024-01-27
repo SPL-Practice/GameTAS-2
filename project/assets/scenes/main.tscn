@@ -15,11 +15,10 @@ anchor_mode = 0
 
 [node name="blocks" parent="." instance=ExtResource("2_c55r2")]
 position = Vector2(565, 303)
-drawing_far = Vector3i(10, 10, 10)
-conveyor_speed = Vector3i(1, 1, 1)
+drawing_far = Vector3i(10, 6, 4)
+conveyor_speed = Vector3i(1, 2, 2)
 
 [node name="ui" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

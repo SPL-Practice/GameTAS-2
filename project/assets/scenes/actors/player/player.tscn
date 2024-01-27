@@ -1,18 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7mst7ki2ircs"]
+[gd_scene load_steps=11 format=3 uid="uid://b7mst7ki2ircs"]
 
 [ext_resource type="Shape2D" uid="uid://cg52xsf5iad25" path="res://assets/resources/runtime/templates/geometry/present.tres" id="1_2hijm"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/view/doll.gd" id="1_aie5i"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/hero.gd" id="1_bf62e"]
 [ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_1pqe6"]
+[ext_resource type="Texture2D" uid="uid://bi3nr4na2yqxn" path="res://icon.svg" id="2_bntit"]
+[ext_resource type="Animation" uid="uid://dcnevutjqd6xx" path="res://assets/resources/media/video/animation/player/player_present_falling_down.res" id="3_2qy6p"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/view/model.gd" id="3_brkw0"]
+[ext_resource type="PackedScene" uid="uid://dpfr1bnlveuvd" path="res://assets/scenes/system/ui/elements/core/emitter/client.tscn" id="7_5io4g"]
+
+[sub_resource type="Animation" id="Animation_omn52"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(560, 121)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkfw3"]
+_data = {
+"RESET": SubResource("Animation_omn52"),
+"player_present_falling_down": ExtResource("3_2qy6p")
+}
 
 [node name="player" type="Node2D"]
+script = ExtResource("1_bf62e")
 
-[node name="present" type="AnimatableBody2D" parent="."]
+[node name="doll" type="Node2D" parent="."]
+script = ExtResource("1_aie5i")
+
+[node name="present" type="AnimatableBody2D" parent="doll"]
 position = Vector2(560, 121)
+script = ExtResource("3_brkw0")
 
-[node name="shape" type="CollisionShape2D" parent="present"]
+[node name="shape" type="CollisionShape2D" parent="doll/present"]
 shape = ExtResource("1_2hijm")
+
+[node name="Sprite2D" type="Sprite2D" parent="doll/present"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_bntit")
+
+[node name="animation" type="AnimationPlayer" parent="doll/present"]
+libraries = {
+"": SubResource("AnimationLibrary_jkfw3")
+}
+
+[node name="hit" parent="doll/present" instance=ExtResource("7_5io4g")]
+server_path = "../../../../ui"
 
 [node name="flue" type="Area2D" parent="."]
 position = Vector2(537, 283)
+collision_layer = 0
 collision_mask = 2
 
 [node name="shape" type="CollisionShape2D" parent="flue"]
@@ -20,9 +65,12 @@ position = Vector2(24, 0)
 shape = ExtResource("2_1pqe6")
 
 [node name="warp" type="Area2D" parent="."]
-position = Vector2(539, 343)
+position = Vector2(537, 283)
+collision_layer = 0
 collision_mask = 2
 
 [node name="shape" type="CollisionShape2D" parent="warp"]
 position = Vector2(24, 0)
 shape = ExtResource("2_1pqe6")
+
+[connection signal="hit" from="doll/present" to="doll/present/hit" method="_submit"]

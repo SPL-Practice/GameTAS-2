@@ -1,16 +1,15 @@
-extends CharacterBody3D
+extends Node2D
 
 signal hit
 
+var vision
+@export var ui_path: String = "../ui"
+
 @onready var doll = $doll
-@onready var vision = $vision
-@onready var logic = $physics
 
 func _ready():
+	vision = get_node(ui_path)
 	doll.hero = self
-	logic.hero = self
-	logic.doll = doll
-	logic.change_direction(0)
 	
 func switch_pause():
 	vision.pause()
@@ -18,5 +17,6 @@ func switch_pause():
 	
 func collide():
 	Global.highscore()
+	doll.pause()
 	vision.game_over()
 	hit.emit()

@@ -1,7 +1,7 @@
-extends Area3D
+extends Area2D
 
 @export var bonus: int = 1
 
-func _on_receive(hero: CharacterBody3D):
-	hero.vision.score.append(bonus)
+func _on_receive(hero: CollisionObject2D):
+	hero.score.append(bonus)
 	get_parent().queue_free()
