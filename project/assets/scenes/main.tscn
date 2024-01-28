@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=11 format=3 uid="uid://csyhrwdkvxwn3"]
 
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/scenes/pause.tscn" id="6_j2vgm"]
 [ext_resource type="PackedScene" uid="uid://cb5o0mk55nhlr" path="res://assets/scenes/system/ui/elements/core/runtime/focus.tscn" id="6_ucajh"]
 [ext_resource type="PackedScene" uid="uid://k365ytqxu3ys" path="res://assets/scenes/system/ui/elements/core/switcher/on_off.tscn" id="7_sorxm"]
+[ext_resource type="AudioStream" uid="uid://voq8ys6dwlxp" path="res://assets/resources/media/ost/music/main.ogg" id="10_i0nyx"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyepa")
@@ -45,6 +46,10 @@ to_switch = NodePath("..")
 [node name="transition" parent="ui" instance=ExtResource("5_erxgg")]
 visible = false
 layout_mode = 1
+
+[node name="audio" type="AudioStreamPlayer" parent="ui"]
+stream = ExtResource("10_i0nyx")
+autoplay = true
 
 [node name="pause" parent="." instance=ExtResource("5_gdrto")]
 
