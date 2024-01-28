@@ -28,14 +28,12 @@ _data = {
 }
 
 [node name="present" type="AnimatableBody2D"]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(560, 121)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_b057a")
 
 [node name="view" type="Sprite2D" parent="."]
-position = Vector2(150, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_sgdqr")
 

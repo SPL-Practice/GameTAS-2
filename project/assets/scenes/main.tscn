@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=10 format=3 uid="uid://csyhrwdkvxwn3"]
 
-[ext_resource type="PackedScene" uid="uid://b7mst7ki2ircs" path="res://assets/scenes/actors/player/player.tscn" id="1_fensh"]
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
 [ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/blocks/blocks.tscn" id="2_c55r2"]
@@ -21,8 +20,6 @@ anchor_mode = 0
 position = Vector2(565, 303)
 drawing_far = Vector3i(10, 6, 4)
 conveyor_speed = Vector3i(-1, -2, -2)
-
-[node name="player" parent="." instance=ExtResource("1_fensh")]
 
 [node name="ui" type="Control" parent="."]
 process_mode = 3
