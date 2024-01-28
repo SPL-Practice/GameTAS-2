@@ -6,6 +6,7 @@ signal hit
 @onready var animation = $animation
 
 var score
+var doll
 var is_freezed = false
 
 func _ready():
@@ -25,7 +26,12 @@ func play():
 	animation.play("player_present_falling_down")
 	pin(true)
 
+func _animation_end():
+	doll.reset()
+	stop(true)
+
 func collide():
+	printerr("wat")
 	Global.highscore()
 	stop(true)
 	hit.emit()

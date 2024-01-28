@@ -13,10 +13,16 @@ func _input(e):
 	movement.tick(self, blackboard)
 
 func _ready():
+	view.doll = self
 	blackboard.set_value('event', null)
 	#blackboard.set_value('swipe', 'swiped')
 	#blackboard.set_value('drag', false)
+	#blackboard.set_value('present', false)
+	reset()
+	
+func reset():
 	blackboard.set_value('present', false)
+	printerr("RESET")
 
 func pause():
 	if (is_paused):
