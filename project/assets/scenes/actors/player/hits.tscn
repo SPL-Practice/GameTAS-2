@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bat43suoo1v7w"]
+
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/score.gd" id="1_hnadu"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/hits/hits.gd" id="1_hsv0w"]
+[ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_g1vk5"]
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/collision.gd" id="3_rv5bv"]
+
+[node name="hits" type="Node2D"]
+script = ExtResource("1_hsv0w")
+
+[node name="flue" type="Area2D" parent="."]
+position = Vector2(537, 283)
+collision_mask = 2
+script = ExtResource("1_hnadu")
+
+[node name="shape" type="CollisionShape2D" parent="flue"]
+position = Vector2(24, 0)
+shape = ExtResource("2_g1vk5")
+
+[node name="warp" type="Area2D" parent="."]
+process_mode = 4
+position = Vector2(537, 283)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_rv5bv")
+
+[node name="shape" type="CollisionShape2D" parent="warp"]
+process_mode = 4
+position = Vector2(24, 0)
+shape = ExtResource("2_g1vk5")
+
+[node name="timings" type="Node" parent="."]
+
+[node name="warp" type="Timer" parent="timings"]
+wait_time = 2.8
+
+[node name="flue" type="Timer" parent="timings"]
+wait_time = 1.2
+
+[node name="over" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="flue" to="flue" method="_on_receive"]
+[connection signal="body_entered" from="warp" to="warp" method="_on_player_collide"]
+[connection signal="timeout" from="timings/warp" to="." method="_activate_flue"]
+[connection signal="timeout" from="timings/flue" to="." method="_deactivate_flue"]

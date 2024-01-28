@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://csyhrwdkvxwn3"]
+
+[ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
+[ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/blocks/blocks.tscn" id="2_c55r2"]
+[ext_resource type="PackedScene" uid="uid://jb8uo0di7rkp" path="res://assets/scenes/system/ui/screens/transition.tscn" id="5_erxgg"]
+[ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/ui/elements/core/emitter/server.tscn" id="5_gdrto"]
+[ext_resource type="PackedScene" uid="uid://cqgjoondglfex" path="res://assets/scenes/system/ui/screens/tap.tscn" id="6_53uu6"]
+[ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/scenes/pause.tscn" id="6_j2vgm"]
+[ext_resource type="PackedScene" uid="uid://cb5o0mk55nhlr" path="res://assets/scenes/system/ui/elements/core/runtime/focus.tscn" id="6_ucajh"]
+[ext_resource type="PackedScene" uid="uid://k365ytqxu3ys" path="res://assets/scenes/system/ui/elements/core/switcher/on_off.tscn" id="7_sorxm"]
+[ext_resource type="AudioStream" uid="uid://voq8ys6dwlxp" path="res://assets/resources/media/ost/music/main.ogg" id="10_i0nyx"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_jyepa")
+
+[node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="blocks" parent="." instance=ExtResource("2_c55r2")]
+position = Vector2(565, 303)
+drawing_far = Vector3i(10, 6, 4)
+conveyor_speed = Vector3i(-1, -2, -2)
+
+[node name="ui" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="score" parent="ui" instance=ExtResource("1_fqsid")]
+layout_mode = 1
+
+[node name="tap" parent="ui" instance=ExtResource("6_53uu6")]
+layout_mode = 1
+
+[node name="focus" parent="ui/tap" node_paths=PackedStringArray("control") instance=ExtResource("6_ucajh")]
+control = NodePath("..")
+
+[node name="on_off" parent="ui/tap" node_paths=PackedStringArray("to_switch") instance=ExtResource("7_sorxm")]
+to_switch = NodePath("..")
+
+[node name="transition" parent="ui" instance=ExtResource("5_erxgg")]
+visible = false
+layout_mode = 1
+
+[node name="audio" type="AudioStreamPlayer" parent="ui"]
+stream = ExtResource("10_i0nyx")
+autoplay = true
+
+[node name="pause" parent="." instance=ExtResource("5_gdrto")]
+
+[node name="tree" parent="pause" instance=ExtResource("6_j2vgm")]
+initial = true
+
+[connection signal="pressed" from="ui/tap" to="ui/score" method="_reset_score"]
+[connection signal="pressed" from="ui/tap" to="ui/tap/on_off" method="switch"]
+[connection signal="pressed" from="ui/tap" to="pause/tree" method="_pause_process"]
+[connection signal="on_receive" from="pause" to="ui/tap/on_off" method="switch"]
+[connection signal="on_receive" from="pause" to="pause/tree" method="_pause_process"]

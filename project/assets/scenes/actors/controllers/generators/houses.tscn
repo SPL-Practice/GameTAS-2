@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd8qkux8xlo36"]
+
+[ext_resource type="PackedScene" uid="uid://r3imudttcmtb" path="res://assets/scenes/system/scenes/loader.tscn" id="1_2r1qx"]
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/generators/constant.gd" id="1_kaukf"]
+
+[node name="generator" type="Node2D"]
+script = ExtResource("1_kaukf")
+
+[node name="loader" parent="." instance=ExtResource("1_2r1qx")]
+files = "res://assets/scenes/actors/environment/houses"
