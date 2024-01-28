@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=12 format=3 uid="uid://csyhrwdkvxwn3"]
 
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/scenes/pause.tscn" id="6_j2vgm"]
 [ext_resource type="PackedScene" uid="uid://cb5o0mk55nhlr" path="res://assets/scenes/system/ui/elements/core/runtime/focus.tscn" id="6_ucajh"]
 [ext_resource type="PackedScene" uid="uid://k365ytqxu3ys" path="res://assets/scenes/system/ui/elements/core/switcher/on_off.tscn" id="7_sorxm"]
+[ext_resource type="PackedScene" uid="uid://3ffg36tbvrk1" path="res://assets/scenes/system/ui/elements/menu/options/volume.tscn" id="9_5dc4k"]
 [ext_resource type="AudioStream" uid="uid://voq8ys6dwlxp" path="res://assets/resources/media/ost/music/main.ogg" id="10_i0nyx"]
 
 [node name="main" type="Node"]
@@ -19,7 +20,7 @@ anchor_mode = 0
 
 [node name="blocks" parent="." instance=ExtResource("2_c55r2")]
 position = Vector2(565, 303)
-drawing_far = Vector3i(10, 6, 4)
+drawing_far = Vector3i(3, 8, 4)
 conveyor_speed = Vector3i(-1, -2, -2)
 
 [node name="ui" type="Control" parent="."]
@@ -51,6 +52,20 @@ layout_mode = 1
 stream = ExtResource("10_i0nyx")
 volume_db = -20.0
 autoplay = true
+
+[node name="volume" parent="ui" instance=ExtResource("9_5dc4k")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -66.0
+offset_right = -55.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="pause" parent="." instance=ExtResource("5_gdrto")]
 

@@ -20,7 +20,7 @@ func _ready():
 	
 func reset():
 	blackboard.set_value('present', false)
-	printerr("RESET")
+	#printerr("RESET")
 
 func pause():
 	if (is_paused):
