@@ -23,6 +23,7 @@ func stop(full: bool):
 func play():
 	if (is_freezed):
 		return
+	doll.santa.play("default")
 	animation.play("player_present_falling_down")
 	pin(true)
 

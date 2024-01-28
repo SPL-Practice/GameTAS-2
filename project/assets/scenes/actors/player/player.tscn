@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7mst7ki2ircs"]
+[gd_scene load_steps=8 format=3 uid="uid://b7mst7ki2ircs"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/view/doll.gd" id="1_aie5i"]
 [ext_resource type="SpriteFrames" uid="uid://eyp4qyyalsyw" path="res://assets/resources/media/video/frames/player_model.tres" id="2_rxrol"]
+[ext_resource type="SpriteFrames" uid="uid://bwt12rdpjj2xg" path="res://assets/resources/runtime/templates/frames/santa.tres" id="2_tnnil"]
 [ext_resource type="PackedScene" uid="uid://dpji5fu40yt6w" path="res://assets/scenes/actors/player/present.tscn" id="3_j15gv"]
 [ext_resource type="PackedScene" uid="uid://bu40m17qroydn" path="res://assets/scenes/actors/behavior/movement/movement.tscn" id="5_ks4n7"]
 [ext_resource type="Script" path="res://addons/godot-behavior-tree-plugin/blackboard.gd" id="5_rxukr"]
@@ -12,6 +13,13 @@ position = Vector2(-604, -326)
 
 [node name="doll" type="Node2D" parent="."]
 script = ExtResource("1_aie5i")
+
+[node name="santa" type="AnimatedSprite2D" parent="doll"]
+position = Vector2(560, 94)
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("2_tnnil")
+frame = 8
+frame_progress = 1.0
 
 [node name="present" parent="doll" instance=ExtResource("3_j15gv")]
 collision_mask = 5

@@ -4,6 +4,7 @@ signal hit
 
 var is_paused: bool = true
 
+@onready var santa = $santa
 @onready var view = $present
 @onready var blackboard = $blackboard
 @onready var movement = $movement
@@ -19,7 +20,7 @@ func _ready():
 	
 func reset():
 	blackboard.set_value('present', false)
-	printerr("RESET")
+	#printerr("RESET")
 
 func pause():
 	if (is_paused):
