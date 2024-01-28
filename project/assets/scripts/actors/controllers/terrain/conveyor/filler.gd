@@ -17,11 +17,7 @@ func fill_append(storage, generator, offset: Vector3i, count: int) -> void:
 			var current = storage.get_current(index)
 			storage.append_block(block, current, offset.y)
 
-var count1 = 0
-
 func fill_push(storage, generator, offset: Vector3i, count: int) -> void:
-	count1 += 1
-	
 	for index in count:
 		var block = generator.generate()
 		
