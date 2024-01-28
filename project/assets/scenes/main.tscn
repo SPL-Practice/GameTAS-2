@@ -49,6 +49,7 @@ layout_mode = 1
 
 [node name="audio" type="AudioStreamPlayer" parent="ui"]
 stream = ExtResource("10_i0nyx")
+volume_db = -20.0
 autoplay = true
 
 [node name="pause" parent="." instance=ExtResource("5_gdrto")]
