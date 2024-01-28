@@ -32,9 +32,12 @@ shape = ExtResource("2_g1vk5")
 [node name="timings" type="Node" parent="."]
 
 [node name="warp" type="Timer" parent="timings"]
-wait_time = 6.0
+wait_time = 2.8
 
 [node name="flue" type="Timer" parent="timings"]
+wait_time = 1.2
 
 [connection signal="body_entered" from="flue" to="flue" method="_on_receive"]
 [connection signal="body_entered" from="warp" to="warp" method="_on_player_collide"]
+[connection signal="timeout" from="timings/warp" to="." method="_activate_flue"]
+[connection signal="timeout" from="timings/flue" to="." method="_deactivate_flue"]

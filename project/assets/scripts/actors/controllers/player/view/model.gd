@@ -33,5 +33,4 @@ func _animation_end():
 func collide():
 	printerr("wat")
 	Global.highscore()
-	stop(true)
 	hit.emit()

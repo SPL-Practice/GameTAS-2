@@ -51,6 +51,7 @@ layout_mode = 1
 [node name="tree" parent="pause" instance=ExtResource("6_j2vgm")]
 initial = true
 
+[connection signal="pressed" from="ui/tap" to="ui/score" method="_reset_score"]
 [connection signal="pressed" from="ui/tap" to="ui/tap/on_off" method="switch"]
 [connection signal="pressed" from="ui/tap" to="pause/tree" method="_pause_process"]
 [connection signal="on_receive" from="pause" to="ui/tap/on_off" method="switch"]
