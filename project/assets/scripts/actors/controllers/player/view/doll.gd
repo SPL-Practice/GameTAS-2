@@ -4,6 +4,7 @@ signal hit
 
 var is_paused: bool = true
 
+@onready var santa = $santa
 @onready var view = $present
 @onready var blackboard = $blackboard
 @onready var movement = $movement

@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bwt12rdpjj2xg"]
+
+[ext_resource type="Texture2D" uid="uid://bbu5e88apaw14" path="res://assets/resources/media/images/player/santa/Armature_animtion0_0.png" id="1_xdwfs"]
+[ext_resource type="Texture2D" uid="uid://5up28xccj5ky" path="res://assets/resources/media/images/player/santa/Armature_animtion0_1.png" id="2_xiov7"]
+[ext_resource type="Texture2D" uid="uid://dtguh42s25t0o" path="res://assets/resources/media/images/player/santa/Armature_animtion0_2.png" id="3_omhtc"]
+[ext_resource type="Texture2D" uid="uid://bg3gu60botuam" path="res://assets/resources/media/images/player/santa/Armature_animtion0_3.png" id="4_xu8ye"]
+[ext_resource type="Texture2D" uid="uid://dhr25b76wu5qw" path="res://assets/resources/media/images/player/santa/Armature_animtion0_4.png" id="5_2q4cq"]
+[ext_resource type="Texture2D" uid="uid://bor7kwgvqmfru" path="res://assets/resources/media/images/player/santa/Armature_animtion0_5.png" id="6_n2uvb"]
+[ext_resource type="Texture2D" uid="uid://dblgnvlrvlk4m" path="res://assets/resources/media/images/player/santa/Armature_animtion0_6.png" id="7_t1khj"]
+[ext_resource type="Texture2D" uid="uid://drqiroq2gqqth" path="res://assets/resources/media/images/player/santa/Armature_animtion0_7.png" id="8_1qf3o"]
+[ext_resource type="Texture2D" uid="uid://c35i2866nm33e" path="res://assets/resources/media/images/player/santa/Armature_animtion0_8.png" id="9_i3lqy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xdwfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xiov7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_omhtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xu8ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2q4cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n2uvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t1khj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1qf3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i3lqy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]

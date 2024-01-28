@@ -22,7 +22,6 @@ Global="*res://assets/scripts/system/global.gd"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
 
 [editor_plugins]
 

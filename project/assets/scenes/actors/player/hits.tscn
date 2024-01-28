@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bat43suoo1v7w"]
+[gd_scene load_steps=6 format=3 uid="uid://bat43suoo1v7w"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/environment/score.gd" id="1_hnadu"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/hits/hits.gd" id="1_hsv0w"]
 [ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_g1vk5"]
+[ext_resource type="Texture2D" uid="uid://qcl8d3at87g4" path="res://assets/resources/media/images/environment/presents/main.png" id="2_ly86x"]
 [ext_resource type="Script" path="res://assets/scripts/actors/environment/collision.gd" id="3_rv5bv"]
 
 [node name="hits" type="Node2D"]
 script = ExtResource("1_hsv0w")
+
+[node name="view" type="Sprite2D" parent="."]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+position = Vector2(561, 219)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ly86x")
 
 [node name="flue" type="Area2D" parent="."]
 position = Vector2(537, 283)
