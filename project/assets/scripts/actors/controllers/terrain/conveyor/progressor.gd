@@ -7,7 +7,7 @@ extends Node
 var storage
 var generator
 
-func check_out_of_bounds() -> void:
+func check_out_of_bounds(speed) -> void:
 	var first = storage.get_first()
 	var edge = first.get_center() + offset
 	
@@ -19,6 +19,6 @@ func check_out_of_bounds() -> void:
 
 
 func progress(speed) -> void:
-	check_out_of_bounds()
+	check_out_of_bounds(speed)
 	for block in storage.rendering:
 		block.position.x += speed
