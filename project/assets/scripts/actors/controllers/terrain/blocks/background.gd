@@ -16,3 +16,9 @@ func append_to_edge(target: Node2D, interval: float) -> void:
 	var center = target.get_center()
 	var append = get_center()
 	position.x = x - center - append - interval
+
+func push_to_edge(target: Node2D, interval: float) -> void:
+	var x = target.position.x
+	var center = target.get_center()
+	var append = get_center()
+	position.x = x + center + append + interval

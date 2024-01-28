@@ -12,9 +12,9 @@ extends Node2D
 @onready var houses = $houses
 
 func fill_space() -> void:
-	air.fill_space(drawing_far.x)
-	forest.fill_space(drawing_far.y)
-	houses.fill_space(drawing_far.z)
+	air.fill_space(drawing_far.x, conveyor_speed.x)
+	forest.fill_space(drawing_far.y, conveyor_speed.y)
+	houses.fill_space(drawing_far.z, conveyor_speed.z)
 
 func progress() -> void:
 	air.progress(conveyor_speed.x)

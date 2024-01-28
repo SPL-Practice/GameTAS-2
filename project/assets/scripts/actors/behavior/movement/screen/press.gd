@@ -8,7 +8,6 @@ func send(tact):
 	var is_sent = data.get_value('present')
 	
 	if (!is_sent):
-		printerr("YES")
 		data.set_value('present', true)
 		tact.actor.view.play()
 		state = OK

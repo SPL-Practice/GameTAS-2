@@ -16,10 +16,11 @@ func _ready():
 	progressor.interval = offset.y
 	progressor.offset = offset.z
 
-func fill_space(count: int) -> void:
+func fill_space(count: int, speed: float) -> void:
 	var storage = progressor.storage
 	var generator = progressor.generator
-	$filler.fill_space(storage, generator, offset, count)
-		
+	$filler.fill_append(storage, generator, offset, count)
+	$filler.fill_push(storage, generator, offset, count)
+	
 func progress(speed) -> void:
 	progressor.progress(speed)
