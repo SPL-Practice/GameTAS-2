@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg22svke2jx4u"]
 
-[ext_resource type="Texture2D" uid="uid://chwu448qht53v" path="res://assets/resources/media/images/environment/forest/very_small.png" id="1_mhvpm"]
+[ext_resource type="Texture2D" uid="uid://btf056fjisfjk" path="res://assets/resources/media/images/environment/forest/very_small.png" id="1_mhvpm"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/blocks/background.gd" id="1_xrx8f"]
 
 [node name="trees" type="Node2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cku00rgqpmas4"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/blocks/background.gd" id="1_35spm"]
-[ext_resource type="Texture2D" uid="uid://c4xubkn1soocm" path="res://assets/resources/media/images/environment/forest/big2.png" id="1_tn87s"]
+[ext_resource type="Texture2D" uid="uid://cxkulb74m3i5a" path="res://assets/resources/media/images/environment/forest/big2.png" id="1_tn87s"]
 
 [node name="trees" type="Node2D"]
 script = ExtResource("1_35spm")

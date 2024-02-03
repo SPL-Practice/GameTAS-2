@@ -15,6 +15,7 @@ conveyor_speed = Vector3i(-6, -2, -4)
 [node name="ground" parent="." instance=ExtResource("2_4rpl7")]
 position = Vector2(0, 170)
 offset = Vector3(0, 0, -3000)
+metadata/_edit_lock_ = true
 
 [node name="generator" parent="ground" instance=ExtResource("4_0u04g")]
 
@@ -26,10 +27,11 @@ metadata/_edit_lock_ = true
 [node name="generator" parent="air" instance=ExtResource("1_dawhx")]
 
 [node name="forest" parent="." instance=ExtResource("2_4rpl7")]
+position = Vector2(0, -15)
 offset = Vector3(0, 0, -1250)
-metadata/_edit_lock_ = true
 
 [node name="generator" parent="forest" instance=ExtResource("3_ht1ru")]
+position = Vector2(0, -15)
 
 [node name="player" parent="." instance=ExtResource("5_tr7sf")]
 metadata/_edit_lock_ = true

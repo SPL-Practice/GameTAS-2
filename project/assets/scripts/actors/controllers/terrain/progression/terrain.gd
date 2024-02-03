@@ -22,5 +22,5 @@ func progress() -> void:
 	air.progress(conveyor_speed.x)
 	forest.progress(conveyor_speed.y)
 	houses.progress(conveyor_speed.z)
-	ground.progress(conveyor_speed.x)
+	ground.progress(conveyor_speed.y)
 	
