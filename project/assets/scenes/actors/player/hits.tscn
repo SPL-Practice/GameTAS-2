@@ -11,12 +11,12 @@ script = ExtResource("1_hsv0w")
 
 [node name="view" type="Sprite2D" parent="."]
 modulate = Color(0.254902, 0.254902, 0.254902, 1)
-position = Vector2(561, 219)
+position = Vector2(6.10352e-05, -1.2)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_ly86x")
 
 [node name="flue" type="Area2D" parent="."]
-position = Vector2(537, 283)
+position = Vector2(-24, 62.8)
 collision_mask = 2
 script = ExtResource("1_hnadu")
 
@@ -26,7 +26,7 @@ shape = ExtResource("2_g1vk5")
 
 [node name="warp" type="Area2D" parent="."]
 process_mode = 4
-position = Vector2(537, 283)
+position = Vector2(-24, 62.8)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("3_rv5bv")

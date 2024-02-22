@@ -1,27 +1,157 @@
-[gd_scene load_steps=13 format=3 uid="uid://csyhrwdkvxwn3"]
+[gd_scene load_steps=22 format=3 uid="uid://csyhrwdkvxwn3"]
 
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="1_fqsid"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
 [ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/blocks/blocks.tscn" id="2_c55r2"]
+[ext_resource type="Script" path="res://assets/scripts/system/ui/behavior/parallax.gd" id="2_dsrah"]
+[ext_resource type="Texture2D" uid="uid://cyi1hxey17vrp" path="res://assets/resources/media/images/environment/ground/ground.png" id="3_v6154"]
+[ext_resource type="Texture2D" uid="uid://dik8hye8mdcdk" path="res://assets/resources/media/images/environment/forest/middle.png" id="4_8jmwh"]
+[ext_resource type="Texture2D" uid="uid://dcedgppk2oui4" path="res://assets/resources/media/images/environment/forest/big1.png" id="5_43xxe"]
 [ext_resource type="PackedScene" uid="uid://jb8uo0di7rkp" path="res://assets/scenes/system/ui/screens/transition.tscn" id="5_erxgg"]
 [ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/ui/elements/core/emitter/server.tscn" id="5_gdrto"]
+[ext_resource type="Texture2D" uid="uid://cxkulb74m3i5a" path="res://assets/resources/media/images/environment/forest/big2.png" id="5_o4qy7"]
+[ext_resource type="Texture2D" uid="uid://btf056fjisfjk" path="res://assets/resources/media/images/environment/forest/very_small.png" id="6_7w3mn"]
 [ext_resource type="PackedScene" uid="uid://cqgjoondglfex" path="res://assets/scenes/system/ui/screens/tap.tscn" id="6_53uu6"]
+[ext_resource type="Texture2D" uid="uid://dhgdhwtcmifm4" path="res://assets/resources/media/images/environment/forest/small.png" id="6_71pgh"]
 [ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/scenes/pause.tscn" id="6_j2vgm"]
 [ext_resource type="PackedScene" uid="uid://cb5o0mk55nhlr" path="res://assets/scenes/system/ui/elements/core/runtime/focus.tscn" id="6_ucajh"]
 [ext_resource type="PackedScene" uid="uid://k365ytqxu3ys" path="res://assets/scenes/system/ui/elements/core/switcher/on_off.tscn" id="7_sorxm"]
 [ext_resource type="Texture2D" uid="uid://ci2yqggtce0vd" path="res://assets/resources/media/images/textures/ui/start.png" id="7_x2b21"]
 [ext_resource type="PackedScene" uid="uid://3ffg36tbvrk1" path="res://assets/scenes/system/ui/elements/menu/options/volume.tscn" id="9_5dc4k"]
 [ext_resource type="AudioStream" uid="uid://voq8ys6dwlxp" path="res://assets/resources/media/ost/music/main.ogg" id="10_i0nyx"]
+[ext_resource type="Texture2D" uid="uid://b3l2pelf0qits" path="res://assets/resources/media/images/environment/air/snow_sky.png" id="11_s0o15"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkkl5"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyepa")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="left-air" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(12800, 0)
+script = ExtResource("2_dsrah")
+speed = -470.0
+
+[node name="view" type="Sprite2D" parent="ParallaxBackground/left-air"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("11_s0o15")
+centered = false
+
+[node name="left-forest-back" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(7200, 0)
+script = ExtResource("2_dsrah")
+speed = -475.0
+
+[node name="middle" type="Sprite2D" parent="ParallaxBackground/left-forest-back"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("4_8jmwh")
+centered = false
+offset = Vector2(3700, 1750)
+flip_h = true
+
+[node name="big-2" type="Sprite2D" parent="ParallaxBackground/left-forest-back"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_o4qy7")
+centered = false
+offset = Vector2(1350, 1600)
+flip_h = true
+
+[node name="right-forest-back" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(7600, 0)
+script = ExtResource("2_dsrah")
+speed = -475.0
+
+[node name="very-small" type="Sprite2D" parent="ParallaxBackground/right-forest-back"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("6_7w3mn")
+centered = false
+offset = Vector2(500, 1750)
+flip_h = true
+
+[node name="big-2" type="Sprite2D" parent="ParallaxBackground/right-forest-back"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_o4qy7")
+centered = false
+offset = Vector2(5200, 1600)
+flip_h = true
+
+[node name="left-forest-front" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(7200, 0)
+script = ExtResource("2_dsrah")
+speed = -480.0
+
+[node name="small" type="Sprite2D" parent="ParallaxBackground/left-forest-front"]
+modulate = Color(0.596078, 0.596078, 0.596078, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("6_71pgh")
+centered = false
+offset = Vector2(0, 1900)
+flip_h = true
+
+[node name="big-1" type="Sprite2D" parent="ParallaxBackground/left-forest-front"]
+modulate = Color(0.498039, 0.498039, 0.498039, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_43xxe")
+centered = false
+offset = Vector2(600, 1650)
+flip_h = true
+
+[node name="big-2" type="Sprite2D" parent="ParallaxBackground/left-forest-front"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_o4qy7")
+centered = false
+offset = Vector2(1500, 1800)
+flip_h = true
+
+[node name="right-forest-front" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(7200, 0)
+script = ExtResource("2_dsrah")
+speed = -480.0
+
+[node name="small" type="Sprite2D" parent="ParallaxBackground/right-forest-front"]
+modulate = Color(0.596078, 0.596078, 0.596078, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("6_71pgh")
+centered = false
+offset = Vector2(7200, 1900)
+flip_h = true
+
+[node name="big-1" type="Sprite2D" parent="ParallaxBackground/right-forest-front"]
+modulate = Color(0.498039, 0.498039, 0.498039, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_43xxe")
+centered = false
+offset = Vector2(3500, 1650)
+flip_h = true
+
+[node name="big-2" type="Sprite2D" parent="ParallaxBackground/right-forest-front"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("5_o4qy7")
+centered = false
+offset = Vector2(8700, 1800)
+flip_h = true
+
+[node name="left-earth" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(8400, 0)
+script = ExtResource("2_dsrah")
+speed = -480.0
+
+[node name="view" type="Sprite2D" parent="ParallaxBackground/left-earth"]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_v6154")
+centered = false
+flip_h = true
+
 [node name="camera" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="blocks" parent="." instance=ExtResource("2_c55r2")]
-position = Vector2(565, 303)
-conveyor_speed = Vector3i(-1, -2, -2)
+metadata/_edit_lock_ = true
 
 [node name="ui" type="Control" parent="."]
 process_mode = 3
@@ -31,6 +161,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="score" parent="ui" instance=ExtResource("1_fqsid")]
 layout_mode = 1
@@ -46,19 +177,17 @@ on_start = true
 [node name="on_off" parent="ui/tap" node_paths=PackedStringArray("to_switch") instance=ExtResource("7_sorxm")]
 to_switch = NodePath("..")
 
-[node name="TextureRect" type="TextureRect" parent="ui/tap"]
+[node name="aspect" type="AspectRatioContainer" parent="ui/tap"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = -280.0
-offset_right = 298.0
-offset_bottom = 236.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+ratio = 1.2
+
+[node name="start" type="TextureRect" parent="ui/tap/aspect"]
+layout_mode = 2
 texture = ExtResource("7_x2b21")
 expand_mode = 1
 
@@ -99,6 +228,11 @@ offset_right = 115.5
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="blocks" parent="." instance=ExtResource("2_c55r2")]
+position = Vector2(3862, 873)
+drawing_far = Vector3i(3, 14, 5)
+conveyor_speed = Vector3i(-1, -2, -8)
 
 [node name="pause" parent="." instance=ExtResource("5_gdrto")]
 

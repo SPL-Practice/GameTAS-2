@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bkh3ee21fua66"]
+
+[ext_resource type="Texture2D" uid="uid://cx5ter8n7t4l8" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb0.png" id="1_gw5fa"]
+[ext_resource type="Texture2D" uid="uid://dqqnyofw0o1k4" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb1.png" id="2_xb17u"]
+[ext_resource type="Texture2D" uid="uid://baou3v713m5tx" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb2.png" id="3_bqs2i"]
+[ext_resource type="Texture2D" uid="uid://bjgrspp43yxwu" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb3.png" id="4_m68sb"]
+[ext_resource type="Texture2D" uid="uid://oykhnnxusijk" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb4.png" id="5_aqjl8"]
+[ext_resource type="Texture2D" uid="uid://dqomc0mbevtqq" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb5.png" id="6_tnnby"]
+[ext_resource type="Texture2D" uid="uid://cv1uw3ptr3d0w" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb6.png" id="7_rgdpu"]
+[ext_resource type="Texture2D" uid="uid://bvmsc0au3xtau" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb7.png" id="8_5wnqc"]
+[ext_resource type="Texture2D" uid="uid://cdsk4nvwlvx6r" path="res://assets/resources/media/images/environment/presents/Pbomb/pbomb8.png" id="9_8foto"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gw5fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xb17u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bqs2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m68sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aqjl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tnnby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rgdpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5wnqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8foto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

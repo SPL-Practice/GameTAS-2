@@ -23,7 +23,11 @@ Global="*res://assets/scripts/system/global.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/size/viewport_width=7680
+window/size/viewport_height=4320
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(15, 15)
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

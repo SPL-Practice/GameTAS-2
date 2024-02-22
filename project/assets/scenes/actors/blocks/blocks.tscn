@@ -10,9 +10,10 @@
 
 [node name="belts" type="Node2D"]
 script = ExtResource("1_y34es")
-conveyor_speed = Vector3i(-6, -2, -4)
+conveyor_speed = Vector3i(-6, -2, -40)
 
 [node name="ground" parent="." instance=ExtResource("2_4rpl7")]
+visible = false
 position = Vector2(0, 170)
 offset = Vector3(0, 0, -3000)
 metadata/_edit_lock_ = true
@@ -20,6 +21,7 @@ metadata/_edit_lock_ = true
 [node name="generator" parent="ground" instance=ExtResource("4_0u04g")]
 
 [node name="air" parent="." instance=ExtResource("2_4rpl7")]
+visible = false
 position = Vector2(0, -225)
 offset = Vector3(0, 0, -4000)
 metadata/_edit_lock_ = true
@@ -27,6 +29,7 @@ metadata/_edit_lock_ = true
 [node name="generator" parent="air" instance=ExtResource("1_dawhx")]
 
 [node name="forest" parent="." instance=ExtResource("2_4rpl7")]
+visible = false
 position = Vector2(0, -15)
 offset = Vector3(0, 0, -1250)
 
@@ -37,8 +40,8 @@ position = Vector2(0, -15)
 metadata/_edit_lock_ = true
 
 [node name="houses" parent="." instance=ExtResource("2_4rpl7")]
-position = Vector2(0, 200)
-offset = Vector3(0, 0, -1200)
+position = Vector2(0, 2550)
+offset = Vector3(0, 0, -6200)
 metadata/_edit_lock_ = true
 
 [node name="generator" parent="houses" instance=ExtResource("4_qpj6u")]

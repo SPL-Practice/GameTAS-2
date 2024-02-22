@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvmsc0au3xtau"
-path="res://.godot/imported/Armature_animtion0_7.png-da1c6882f564fe9f521d53716bcd7eec.ctex"
+uid="uid://cv1uw3ptr3d0w"
+path="res://.godot/imported/pbomb6.png-4e7d2385c04d263e9af7bc8b4c9bd300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources/media/images/environment/presents/Pbomb/Armature_animtion0_7.png"
-dest_files=["res://.godot/imported/Armature_animtion0_7.png-da1c6882f564fe9f521d53716bcd7eec.ctex"]
+source_file="res://assets/resources/media/images/environment/presents/Pbomb/pbomb6.png"
+dest_files=["res://.godot/imported/pbomb6.png-4e7d2385c04d263e9af7bc8b4c9bd300.ctex"]
 
 [params]
 

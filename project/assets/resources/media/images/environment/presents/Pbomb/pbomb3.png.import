@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjgrspp43yxwu"
-path="res://.godot/imported/Armature_animtion0_3.png-1ec904b169d7fb9cc3013335607cd20f.ctex"
+path="res://.godot/imported/pbomb3.png-96f0aea1d0919e12bd9bdc26f45c8388.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources/media/images/environment/presents/Pbomb/Armature_animtion0_3.png"
-dest_files=["res://.godot/imported/Armature_animtion0_3.png-1ec904b169d7fb9cc3013335607cd20f.ctex"]
+source_file="res://assets/resources/media/images/environment/presents/Pbomb/pbomb3.png"
+dest_files=["res://.godot/imported/pbomb3.png-96f0aea1d0919e12bd9bdc26f45c8388.ctex"]
 
 [params]
 
