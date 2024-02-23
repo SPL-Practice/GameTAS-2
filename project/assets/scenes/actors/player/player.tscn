@@ -21,7 +21,7 @@ frame_progress = 1.0
 
 [node name="present" parent="doll" instance=ExtResource("3_j15gv")]
 collision_mask = 5
-score_path = "../../../../ui/score"
+score_path = "../../../../ui/menu/content/score"
 
 [node name="model" type="AnimatedSprite2D" parent="doll"]
 position = Vector2(358, 0)
