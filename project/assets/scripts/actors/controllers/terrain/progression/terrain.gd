@@ -1,26 +1,12 @@
 extends Node2D
 
+@export var drawing_far: int = 5
+@export var conveyor_speed: float = -8
 
-# Drawing far for: air, forest, houses
-@export var drawing_far: Vector3i = Vector3i(3, 14, 4)
-
-# Drawing speed for: air, forest, houses
-@export var conveyor_speed: Vector3i = Vector3i(-1, -2, -2)
-
-@onready var air = $air
-@onready var forest = $forest
 @onready var houses = $houses
-@onready var ground = $ground
 
 func fill_space() -> void:
-	air.fill_space(drawing_far.x)
-	forest.fill_space(drawing_far.y)
-	houses.fill_space(drawing_far.z)
-	ground.fill_space(drawing_far.x)
+	houses.fill_space(drawing_far)
 
 func progress() -> void:
-	air.progress(conveyor_speed.x)
-	forest.progress(conveyor_speed.y)
-	houses.progress(conveyor_speed.z)
-	ground.progress(conveyor_speed.y)
-	
+	houses.progress(conveyor_speed)

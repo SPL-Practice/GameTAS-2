@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dum8k0swtswla"
-path="res://.godot/imported/hover.svg-53da1b1d4e637c669965c0b6688749a8.ctex"
+uid="uid://b0mjbgwp20up4"
+path="res://.godot/imported/open.svg-0809dc098931cfa93549fb6b781569ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources/media/images/textures/ui/screen/hover.svg"
-dest_files=["res://.godot/imported/hover.svg-53da1b1d4e637c669965c0b6688749a8.ctex"]
+source_file="res://assets/resources/media/images/textures/ui/settings/play/open.svg"
+dest_files=["res://.godot/imported/open.svg-0809dc098931cfa93549fb6b781569ae.ctex"]
 
 [params]
 
@@ -31,7 +31,7 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
 svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

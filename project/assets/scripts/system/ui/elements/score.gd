@@ -1,6 +1,6 @@
 extends Control
 
-@onready var current: Label = $current
+@onready var current: Label = $back/label
 
 func _ready():
 	set_score()

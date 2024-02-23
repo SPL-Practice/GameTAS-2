@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://hydcls1ykpa3"]
+
+[ext_resource type="PackedScene" uid="uid://de7yetaygw7b6" path="res://assets/scenes/system/scenes/background/forest/air.tscn" id="1_xt06r"]
+[ext_resource type="PackedScene" uid="uid://djs1awu4wyddu" path="res://assets/scenes/system/scenes/background/forest/back/left_forest.tscn" id="3_s20oi"]
+[ext_resource type="PackedScene" uid="uid://s61qvvkk8nlv" path="res://assets/scenes/system/scenes/background/forest/back/right_forest.tscn" id="4_urjnm"]
+[ext_resource type="PackedScene" uid="uid://ci6ayo3mjti21" path="res://assets/scenes/system/scenes/background/forest/front/left_forest.tscn" id="5_plico"]
+[ext_resource type="PackedScene" uid="uid://bqqddbwq2bfw1" path="res://assets/scenes/system/scenes/background/forest/earth.tscn" id="6_mo3mm"]
+[ext_resource type="PackedScene" uid="uid://dbdvvfdg2w1hx" path="res://assets/scenes/system/scenes/background/forest/front/right_forest.tscn" id="6_r4tfn"]
+
+[node name="background" type="ParallaxBackground"]
+
+[node name="air" parent="." instance=ExtResource("1_xt06r")]
+
+[node name="left-forest-back" parent="." instance=ExtResource("3_s20oi")]
+
+[node name="right-forest-back" parent="." instance=ExtResource("4_urjnm")]
+
+[node name="left-forest-front" parent="." instance=ExtResource("5_plico")]
+
+[node name="right-forest-front" parent="." instance=ExtResource("6_r4tfn")]
+
+[node name="earth" parent="." instance=ExtResource("6_mo3mm")]

@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cakxia6pcud44"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cakxia6pcud44"]
 
+[ext_resource type="FontFile" uid="uid://cp84gxiam7wfr" path="res://assets/resources/runtime/fonts/62dragz/62DRAGZ.otf" id="1_7h3h2"]
 [ext_resource type="FontFile" uid="uid://c54ec7olcgmsd" path="res://assets/resources/runtime/fonts/arial/ttf/arial.ttf" id="1_35n5w"]
+[ext_resource type="StyleBox" uid="uid://dvep3x5feap74" path="res://assets/resources/runtime/themes/styleboxes/panel-solid.tres" id="2_ofvmg"]
 
 [sub_resource type="FontFile" id="FontFile_y0n0v"]
 cache/0/16/0/ascent = 0.0
@@ -15,4 +17,11 @@ default_font = ExtResource("1_35n5w")
 /fonts/caption = SubResource("FontFile_y0n0v")
 BoxContainer/constants/separation = 0
 Label/constants/line_spacing = 2
-Label/font_sizes/font_size = 24
+Label/constants/outline_size = 0
+Label/font_sizes/font_size = 110
+Label/fonts/font = ExtResource("1_7h3h2")
+MarginContainer/constants/margin_bottom = 100
+MarginContainer/constants/margin_left = 100
+MarginContainer/constants/margin_right = 100
+MarginContainer/constants/margin_top = 100
+Panel/styles/panel = ExtResource("2_ofvmg")
