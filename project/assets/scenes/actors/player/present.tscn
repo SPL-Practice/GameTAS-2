@@ -18,7 +18,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(560, 121)]
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("view:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("view:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkfw3"]
@@ -28,24 +52,29 @@ _data = {
 }
 
 [node name="present" type="AnimatableBody2D"]
-position = Vector2(560, 121)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_b057a")
 
-[node name="view" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.022, 0.022)
-sprite_frames = ExtResource("2_lim1i")
-
 [node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2.5)
 shape = ExtResource("2_p8b7d")
+
+[node name="view" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("2_lim1i")
+animation = &"vector"
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_jkfw3")
 }
 
-[node name="hit" parent="." instance=ExtResource("5_3yk4e")]
-server_path = "../../../../../pause"
+[node name="restart" parent="." instance=ExtResource("5_3yk4e")]
+server_path = "../../../../../../../ui/menu/restart"
 
+[node name="hit" parent="." instance=ExtResource("5_3yk4e")]
+server_path = "../../../../../../../pause"
+
+[connection signal="hit" from="." to="restart" method="_submit"]
 [connection signal="hit" from="." to="hit" method="_submit"]

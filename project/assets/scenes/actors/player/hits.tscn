@@ -9,52 +9,49 @@
 [node name="hits" type="Node2D"]
 
 [node name="timing" type="Area2D" parent="."]
-position = Vector2(0, 62.8)
-collision_layer = 0
+collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_trhy6")
 
 [node name="view" type="Sprite2D" parent="timing"]
+visible = false
 modulate = Color(0.254902, 0.254902, 0.254902, 1)
-position = Vector2(6.10352e-05, -64)
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_ly86x")
 
 [node name="flue" type="Area2D" parent="timing"]
+process_mode = 4
 visible = false
 collision_mask = 2
 script = ExtResource("1_hnadu")
 
 [node name="shape" type="CollisionShape2D" parent="timing/flue"]
+position = Vector2(-3, 180)
 shape = ExtResource("2_g1vk5")
 
 [node name="warp" type="Area2D" parent="timing"]
-process_mode = 4
 visible = false
+position = Vector2(-2, 0)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("3_rv5bv")
 
 [node name="shape" type="CollisionShape2D" parent="timing/warp"]
 process_mode = 4
+position = Vector2(-1, 180)
 shape = ExtResource("2_g1vk5")
 debug_color = Color(0.776471, 0.0431373, 0, 0.419608)
 
 [node name="shape" type="CollisionShape2D" parent="timing"]
+position = Vector2(-3.5, 180)
 shape = ExtResource("2_g1vk5")
 debug_color = Color(0.0745098, 0.65098, 0, 0.419608)
 
-[node name="timings" type="Node" parent="."]
-
-[node name="warp" type="Timer" parent="timings"]
-wait_time = 2.8
-
-[node name="flue" type="Timer" parent="timings"]
-wait_time = 1.2
-
 [node name="over" type="AudioStreamPlayer" parent="."]
 
+[connection signal="area_entered" from="timing" to="timing" method="_activate_flue"]
+[connection signal="area_exited" from="timing" to="timing" method="_deactivate_flue"]
+[connection signal="body_entered" from="timing" to="timing" method="_activate_flue"]
+[connection signal="body_exited" from="timing" to="timing" method="_deactivate_flue"]
 [connection signal="body_entered" from="timing/flue" to="timing/flue" method="_on_receive"]
 [connection signal="body_entered" from="timing/warp" to="timing/warp" method="_on_player_collide"]
-[connection signal="timeout" from="timings/warp" to="." method="_activate_flue"]
-[connection signal="timeout" from="timings/flue" to="." method="_deactivate_flue"]

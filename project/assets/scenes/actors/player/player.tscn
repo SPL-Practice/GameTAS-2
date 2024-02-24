@@ -11,19 +11,26 @@
 [node name="player" type="Node2D"]
 position = Vector2(1, 0)
 
+[node name="hits" parent="." instance=ExtResource("6_rpw38")]
+position = Vector2(0, 2220)
+
 [node name="doll" type="Node2D" parent="."]
 script = ExtResource("1_aie5i")
 
 [node name="santa" type="AnimatedSprite2D" parent="doll"]
+scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_tnnil")
 frame = 8
 frame_progress = 1.0
 
-[node name="present" parent="doll" instance=ExtResource("3_j15gv")]
-collision_mask = 5
-score_path = "../../../../ui/menu/content/score"
+[node name="present" type="Node2D" parent="doll/santa"]
+position = Vector2(0, 150)
 
-[node name="model" type="AnimatedSprite2D" parent="doll"]
+[node name="body" parent="doll/santa/present" instance=ExtResource("3_j15gv")]
+collision_mask = 5
+score_path = "../../../../../../ui/menu/content/score"
+
+[node name="toboggan" type="AnimatedSprite2D" parent="doll/santa"]
 position = Vector2(358, 0)
 sprite_frames = ExtResource("2_rxrol")
 autoplay = "default"
@@ -33,6 +40,3 @@ frame_progress = 0.026282
 script = ExtResource("5_rxukr")
 
 [node name="movement" parent="doll" instance=ExtResource("5_ks4n7")]
-
-[node name="hits" parent="." instance=ExtResource("6_rpw38")]
-position = Vector2(0, 1043)

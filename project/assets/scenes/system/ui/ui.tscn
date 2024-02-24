@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl2luv0tuijuo"]
+[gd_scene load_steps=20 format=3 uid="uid://bl2luv0tuijuo"]
 
 [ext_resource type="Theme" uid="uid://beyh03xa5x65p" path="res://assets/resources/runtime/themes/regular.tres" id="1_3fwem"]
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="2_howmu"]
@@ -14,9 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://b0mjbgwp20up4" path="res://assets/resources/media/images/textures/ui/settings/play/open.svg" id="9_fxx3r"]
 [ext_resource type="Texture2D" uid="uid://betpkhqhq5j4x" path="res://assets/resources/media/images/textures/ui/settings/play/closed.svg" id="10_ftk8h"]
 [ext_resource type="Texture2D" uid="uid://d6xx6ee20g3s" path="res://assets/resources/media/images/textures/ui/settings/pause/closed.svg" id="11_mgn31"]
+[ext_resource type="Shortcut" uid="uid://beefargnqrmfc" path="res://assets/resources/runtime/templates/macro/shortcuts/common/cancel.tres" id="12_rqnre"]
 [ext_resource type="Texture2D" uid="uid://domqa73yi7kfa" path="res://assets/resources/media/images/textures/ui/settings/pause/open.svg" id="12_ywwt6"]
 [ext_resource type="PackedScene" uid="uid://cquu6mkyxh4ci" path="res://assets/scenes/system/ui/elements/core/switcher/toggle.tscn" id="14_a88bn"]
 [ext_resource type="PackedScene" uid="uid://c6lem6oishv1g" path="res://assets/scenes/system/ui/elements/core/switcher/switcher.tscn" id="14_fenno"]
+[ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/ui/elements/core/emitter/server.tscn" id="17_1lear"]
 
 [node name="ui" type="Control"]
 process_mode = 3
@@ -28,10 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3fwem")
 metadata/_edit_lock_ = true
-
-[node name="focus" parent="." node_paths=PackedStringArray("control") instance=ExtResource("4_tmcb3")]
-control = NodePath("../menu/tap")
-on_start = true
 
 [node name="break" parent="." instance=ExtResource("3_dam6g")]
 server_path = "../../pause"
@@ -180,6 +178,8 @@ grow_vertical = 2
 [node name="slider" parent="menu/content/options/elements/settings/volume" instance=ExtResource("7_t36p3")]
 layout_mode = 2
 size_flags_vertical = 1
+step = 0.01
+default_volume = 0.65
 
 [node name="pause" type="Panel" parent="menu/content"]
 custom_minimum_size = Vector2(500, 500)
@@ -195,6 +195,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+shortcut = ExtResource("12_rqnre")
 texture_normal = ExtResource("9_fxx3r")
 texture_pressed = ExtResource("10_ftk8h")
 texture_hover = ExtResource("10_ftk8h")
@@ -207,6 +208,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+shortcut = ExtResource("12_rqnre")
 texture_normal = ExtResource("11_mgn31")
 texture_pressed = ExtResource("12_ywwt6")
 texture_hover = ExtResource("12_ywwt6")
@@ -219,6 +221,16 @@ to_switch = NodePath("../../options")
 to_hide = NodePath("../pause")
 to_show = NodePath("../play")
 
+[node name="restart" parent="menu" instance=ExtResource("17_1lear")]
+
+[node name="show" parent="menu/restart" node_paths=PackedStringArray("to_hide", "to_show") instance=ExtResource("14_fenno")]
+to_hide = NodePath("../../content")
+to_show = NodePath("../../tap")
+
+[node name="focus" parent="menu/restart" node_paths=PackedStringArray("control") instance=ExtResource("4_tmcb3")]
+control = NodePath("../../tap")
+on_start = true
+
 [node name="transition" parent="." instance=ExtResource("8_0hfyt")]
 visible = false
 layout_mode = 1
@@ -229,11 +241,13 @@ volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="menu/tap" to="break" method="_submit"]
-[connection signal="pressed" from="menu/tap" to="menu/content/score" method="_reset_score"]
 [connection signal="pressed" from="menu/tap" to="menu/tap/content" method="switch"]
+[connection signal="pressed" from="menu/tap" to="menu/content/score" method="_reset_score"]
 [connection signal="pressed" from="menu/content/pause/play" to="break" method="_submit"]
-[connection signal="pressed" from="menu/content/pause/play" to="menu/content/pause/toggle" method="switch"]
 [connection signal="pressed" from="menu/content/pause/play" to="menu/content/pause/options" method="switch"]
+[connection signal="pressed" from="menu/content/pause/play" to="menu/content/pause/toggle" method="switch"]
 [connection signal="pressed" from="menu/content/pause/pause" to="break" method="_submit"]
-[connection signal="pressed" from="menu/content/pause/pause" to="menu/content/pause/toggle" method="switch"]
 [connection signal="pressed" from="menu/content/pause/pause" to="menu/content/pause/options" method="switch"]
+[connection signal="pressed" from="menu/content/pause/pause" to="menu/content/pause/toggle" method="switch"]
+[connection signal="on_receive" from="menu/restart" to="menu/restart/show" method="switch"]
+[connection signal="on_receive" from="menu/restart" to="menu/restart/focus" method="focus"]
