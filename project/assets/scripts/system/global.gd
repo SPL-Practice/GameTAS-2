@@ -4,6 +4,7 @@ var serializer
 const storage = "user://kazantick.dat"
 
 var score: int
+var max_score: int = 999
 
 func _ready() -> void:
 	reset()

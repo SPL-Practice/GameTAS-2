@@ -10,6 +10,7 @@
 [node name="background" type="ParallaxBackground"]
 
 [node name="air" parent="." instance=ExtResource("1_xt06r")]
+speed = -420.0
 
 [node name="left-forest-back" parent="." instance=ExtResource("3_s20oi")]
 

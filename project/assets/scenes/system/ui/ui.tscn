@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bl2luv0tuijuo"]
+[gd_scene load_steps=24 format=3 uid="uid://bl2luv0tuijuo"]
 
 [ext_resource type="Theme" uid="uid://beyh03xa5x65p" path="res://assets/resources/runtime/themes/regular.tres" id="1_3fwem"]
 [ext_resource type="PackedScene" uid="uid://b1ie14j2uh6eh" path="res://assets/scenes/system/ui/elements/menu/indicators/score.tscn" id="2_howmu"]
@@ -9,16 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://ci2yqggtce0vd" path="res://assets/resources/media/images/textures/ui/start.png" id="6_j8ql3"]
 [ext_resource type="PackedScene" uid="uid://3ffg36tbvrk1" path="res://assets/scenes/system/ui/elements/menu/options/volume.tscn" id="7_t36p3"]
 [ext_resource type="PackedScene" uid="uid://jb8uo0di7rkp" path="res://assets/scenes/system/ui/screens/transition.tscn" id="8_0hfyt"]
+[ext_resource type="Shortcut" uid="uid://gwvblu3dti2y" path="res://assets/resources/runtime/templates/macro/shortcuts/screen.tres" id="8_edajg"]
 [ext_resource type="Theme" uid="uid://cakxia6pcud44" path="res://assets/resources/runtime/themes/sub.tres" id="8_x3rou"]
 [ext_resource type="AudioStream" uid="uid://voq8ys6dwlxp" path="res://assets/resources/media/ost/music/main.ogg" id="9_fbfmu"]
 [ext_resource type="Texture2D" uid="uid://b0mjbgwp20up4" path="res://assets/resources/media/images/textures/ui/settings/play/open.svg" id="9_fxx3r"]
+[ext_resource type="Script" path="res://assets/scripts/system/ui/screen/fullscreen.gd" id="9_hoksn"]
 [ext_resource type="Texture2D" uid="uid://betpkhqhq5j4x" path="res://assets/resources/media/images/textures/ui/settings/play/closed.svg" id="10_ftk8h"]
+[ext_resource type="Theme" uid="uid://dx8ulouwush12" path="res://assets/resources/runtime/themes/caption.tres" id="11_hi2rx"]
 [ext_resource type="Texture2D" uid="uid://d6xx6ee20g3s" path="res://assets/resources/media/images/textures/ui/settings/pause/closed.svg" id="11_mgn31"]
 [ext_resource type="Shortcut" uid="uid://beefargnqrmfc" path="res://assets/resources/runtime/templates/macro/shortcuts/common/cancel.tres" id="12_rqnre"]
 [ext_resource type="Texture2D" uid="uid://domqa73yi7kfa" path="res://assets/resources/media/images/textures/ui/settings/pause/open.svg" id="12_ywwt6"]
 [ext_resource type="PackedScene" uid="uid://cquu6mkyxh4ci" path="res://assets/scenes/system/ui/elements/core/switcher/toggle.tscn" id="14_a88bn"]
 [ext_resource type="PackedScene" uid="uid://c6lem6oishv1g" path="res://assets/scenes/system/ui/elements/core/switcher/switcher.tscn" id="14_fenno"]
 [ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/ui/elements/core/emitter/server.tscn" id="17_1lear"]
+[ext_resource type="PackedScene" uid="uid://df6m8g6ffa8ad" path="res://assets/scenes/system/ui/elements/menu/options/pause/back/quit.tscn" id="18_pwe62"]
 
 [node name="ui" type="Control"]
 process_mode = 3
@@ -167,7 +171,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = ExtResource("8_x3rou")
 
-[node name="volume" type="MarginContainer" parent="menu/content/options/elements/settings"]
+[node name="split" type="HSplitContainer" parent="menu/content/options/elements/settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,7 +179,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="slider" parent="menu/content/options/elements/settings/volume" instance=ExtResource("7_t36p3")]
+[node name="screen" type="MarginContainer" parent="menu/content/options/elements/settings/split"]
+layout_mode = 2
+
+[node name="fullscreen" type="Button" parent="menu/content/options/elements/settings/split/screen"]
+layout_mode = 2
+toggle_mode = true
+shortcut = ExtResource("8_edajg")
+text = "FuLLScreen"
+
+[node name="toggle" type="Node" parent="menu/content/options/elements/settings/split/screen/fullscreen"]
+script = ExtResource("9_hoksn")
+
+[node name="volume" type="MarginContainer" parent="menu/content/options/elements/settings/split"]
+layout_mode = 2
+
+[node name="slider" parent="menu/content/options/elements/settings/split/volume" instance=ExtResource("7_t36p3")]
 layout_mode = 2
 size_flags_vertical = 1
 step = 0.01
@@ -221,6 +240,13 @@ to_switch = NodePath("../../options")
 to_hide = NodePath("../pause")
 to_show = NodePath("../play")
 
+[node name="exit" parent="menu/content" instance=ExtResource("18_pwe62")]
+visible = false
+layout_mode = 2
+theme = ExtResource("11_hi2rx")
+text = "Thanks for
+playing!"
+
 [node name="restart" parent="menu" instance=ExtResource("17_1lear")]
 
 [node name="show" parent="menu/restart" node_paths=PackedStringArray("to_hide", "to_show") instance=ExtResource("14_fenno")]
@@ -243,6 +269,7 @@ autoplay = true
 [connection signal="pressed" from="menu/tap" to="break" method="_submit"]
 [connection signal="pressed" from="menu/tap" to="menu/tap/content" method="switch"]
 [connection signal="pressed" from="menu/tap" to="menu/content/score" method="_reset_score"]
+[connection signal="pressed" from="menu/content/options/elements/settings/split/screen/fullscreen" to="menu/content/options/elements/settings/split/screen/fullscreen/toggle" method="_toggle_fullscreen"]
 [connection signal="pressed" from="menu/content/pause/play" to="break" method="_submit"]
 [connection signal="pressed" from="menu/content/pause/play" to="menu/content/pause/options" method="switch"]
 [connection signal="pressed" from="menu/content/pause/play" to="menu/content/pause/toggle" method="switch"]

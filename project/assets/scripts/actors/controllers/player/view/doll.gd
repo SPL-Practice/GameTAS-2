@@ -11,11 +11,13 @@ var is_paused: bool = true
 
 func _input(e):
 	blackboard.set_value('event', e)
+	blackboard.set_value('mouse', get_global_mouse_position())
 	movement.tick(self, blackboard)
 
 func _ready():
 	view.doll = self
 	blackboard.set_value('event', null)
+	blackboard.set_value('mouse', get_global_mouse_position())
 	reset()
 	
 func reset():

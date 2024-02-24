@@ -27,6 +27,8 @@ window/size/viewport_width=7680
 window/size/viewport_height=4320
 window/size/initial_position_type=0
 window/size/initial_position=Vector2i(15, 15)
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -53,6 +55,10 @@ jump={
 2d_physics/layer_2="Present"
 2d_physics/layer_3="Flue"
 2d_physics/layer_4="House"
+
+[physics]
+
+common/physics_ticks_per_second=90
 
 [rendering]
 

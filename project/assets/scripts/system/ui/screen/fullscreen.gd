@@ -1,4 +1,4 @@
-extends TextureButton
+extends Node
 
 func is_fullscreen(mode):
 	return mode == DisplayServer.WINDOW_MODE_FULLSCREEN

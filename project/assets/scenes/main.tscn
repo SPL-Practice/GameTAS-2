@@ -18,6 +18,7 @@ metadata/_edit_lock_ = true
 
 [node name="blocks" parent="." instance=ExtResource("2_c55r2")]
 position = Vector2(3862, 873)
+conveyor_speed = -7.0
 
 [node name="ui" parent="." instance=ExtResource("10_24f7k")]
 

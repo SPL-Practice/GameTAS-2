@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://cakxia6pcud44"]
 
 [ext_resource type="FontFile" uid="uid://cp84gxiam7wfr" path="res://assets/resources/runtime/fonts/62dragz/62DRAGZ.otf" id="1_7h3h2"]
-[ext_resource type="FontFile" uid="uid://c54ec7olcgmsd" path="res://assets/resources/runtime/fonts/arial/ttf/arial.ttf" id="1_35n5w"]
 [ext_resource type="StyleBox" uid="uid://dvep3x5feap74" path="res://assets/resources/runtime/themes/styleboxes/panel-solid.tres" id="2_ofvmg"]
+[ext_resource type="StyleBox" uid="uid://dkdqhhulf6644" path="res://assets/resources/runtime/themes/styleboxes/buttons-transparent.tres" id="2_tupcc"]
 
 [sub_resource type="FontFile" id="FontFile_y0n0v"]
 cache/0/16/0/ascent = 0.0
@@ -13,9 +13,19 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [resource]
-default_font = ExtResource("1_35n5w")
+default_font = ExtResource("1_7h3h2")
 /fonts/caption = SubResource("FontFile_y0n0v")
 BoxContainer/constants/separation = 0
+Button/colors/font_focus_color = Color(0.588235, 0.588235, 0.588235, 1)
+Button/colors/font_hover_color = Color(0.945098, 0.945098, 0.368627, 1)
+Button/colors/font_hover_pressed_color = Color(0.945098, 0.945098, 0.627451, 1)
+Button/colors/font_pressed_color = Color(0.945098, 0.945098, 0.152941, 1)
+Button/font_sizes/font_size = 110
+Button/fonts/font = ExtResource("1_7h3h2")
+Button/styles/focus = ExtResource("2_tupcc")
+Button/styles/hover = ExtResource("2_tupcc")
+Button/styles/normal = ExtResource("2_tupcc")
+Button/styles/pressed = ExtResource("2_tupcc")
 Label/constants/line_spacing = 2
 Label/constants/outline_size = 0
 Label/font_sizes/font_size = 110

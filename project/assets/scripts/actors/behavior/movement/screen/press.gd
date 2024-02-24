@@ -8,7 +8,6 @@ func send(tact):
 	var is_sent = data.get_value('present')
 	
 	if (!is_sent):
-		#printerr("FIRE IN THE HOLE!")
 		data.set_value('present', true)
 		tact.actor.view.play()
 		state = OK
@@ -17,6 +16,7 @@ func send(tact):
 
 
 func tick(tact: Tick):
+	#is_action_just_pressed
 	if (Input.is_action_just_pressed("confirm")):
 		return send(tact)
 	

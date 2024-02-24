@@ -11,7 +11,6 @@ func _ready() -> void:
 	_init()
 
 func _init() -> void:
-	var db: float = AudioServer.get_bus_volume_db(bus_index)
 	value = default_volume
 	_on_value_changed(default_volume)
 	

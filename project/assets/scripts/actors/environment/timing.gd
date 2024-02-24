@@ -11,6 +11,7 @@ func _debug(to_disable, to_enable):
 func _reactivate(to_disable, to_enable):
 	to_disable.process_mode = Node.PROCESS_MODE_DISABLED
 	to_enable.process_mode = Node.PROCESS_MODE_INHERIT
+	_debug(to_disable, to_enable)
 
 func _activate_flue(_body):
 	view.show()
