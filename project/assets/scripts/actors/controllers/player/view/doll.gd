@@ -5,22 +5,23 @@ signal hit
 var is_paused: bool = true
 
 @onready var santa = $santa
-@onready var view = $present
+@onready var view = $santa/present/body
 @onready var blackboard = $blackboard
 @onready var movement = $movement
 
 func _input(e):
 	blackboard.set_value('event', e)
+	blackboard.set_value('mouse', get_global_mouse_position())
 	movement.tick(self, blackboard)
 
 func _ready():
 	view.doll = self
 	blackboard.set_value('event', null)
+	blackboard.set_value('mouse', get_global_mouse_position())
 	reset()
 	
 func reset():
 	blackboard.set_value('present', false)
-	#printerr("RESET")
 
 func pause():
 	if (is_paused):

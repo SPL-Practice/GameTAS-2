@@ -8,7 +8,6 @@ focus_neighbor_top = NodePath("../options")
 focus_neighbor_right = NodePath("../options")
 focus_previous = NodePath("../options")
 shortcut = ExtResource("1_fyan8")
-text = "Quit"
 script = ExtResource("2_hfp7p")
 
 [connection signal="pressed" from="." to="." method="_on_quit"]

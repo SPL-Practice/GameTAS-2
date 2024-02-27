@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6n5lohsjvjc2"]
+[gd_scene load_steps=4 format=3 uid="uid://c6n5lohsjvjc2"]
 
 [ext_resource type="Texture2D" uid="uid://d24vdpcad58cb" path="res://assets/resources/media/images/environment/houses/easy.png" id="1_o0mp1"]
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/terrain/blocks/background.gd" id="1_r3r7y"]
+[ext_resource type="Shape2D" uid="uid://1y48gx05xfpo" path="res://assets/resources/runtime/templates/geometry/flues/easy.tres" id="3_dbv6e"]
 
 [node name="house" type="Node2D"]
 script = ExtResource("1_r3r7y")
 
 [node name="view" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_o0mp1")
+
+[node name="flue" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="shape" type="CollisionShape2D" parent="flue"]
+position = Vector2(262, -90)
+shape = ExtResource("3_dbv6e")
