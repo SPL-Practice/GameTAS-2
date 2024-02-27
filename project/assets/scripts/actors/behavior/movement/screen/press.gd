@@ -16,7 +16,6 @@ func send(tact):
 
 
 func tick(tact: Tick):
-	#is_action_just_pressed
 	if (Input.is_action_just_pressed("confirm")):
 		return send(tact)
 	

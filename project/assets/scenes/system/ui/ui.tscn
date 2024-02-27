@@ -95,7 +95,7 @@ layout_mode = 2
 theme = ExtResource("8_x3rou")
 
 [node name="developer-1" type="Panel" parent="menu/content/options/elements/authors"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(3000, 400)
 layout_mode = 2
 
 [node name="margin" type="MarginContainer" parent="menu/content/options/elements/authors/developer-1"]
@@ -108,7 +108,7 @@ layout_mode = 2
 text = "Tatarintsev  Aleksandr"
 
 [node name="developer-2" type="Panel" parent="menu/content/options/elements/authors"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(3000, 400)
 layout_mode = 2
 
 [node name="margin" type="MarginContainer" parent="menu/content/options/elements/authors/developer-2"]
@@ -130,7 +130,7 @@ size_flags_horizontal = 8
 text = "Evseenko  Danila"
 
 [node name="art" type="Panel" parent="menu/content/options/elements/authors"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(3000, 400)
 layout_mode = 2
 
 [node name="margin" type="MarginContainer" parent="menu/content/options/elements/authors/art"]
@@ -143,7 +143,7 @@ layout_mode = 2
 text = "Stepanova  Maria"
 
 [node name="design" type="Panel" parent="menu/content/options/elements/authors"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(3000, 400)
 layout_mode = 2
 
 [node name="margin" type="MarginContainer" parent="menu/content/options/elements/authors/design"]
