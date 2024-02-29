@@ -260,6 +260,7 @@ on_start = true
 [node name="transition" parent="." instance=ExtResource("8_0hfyt")]
 visible = false
 layout_mode = 1
+color = Color(0.0509804, 0.0666667, 0.0901961, 1)
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_fbfmu")
