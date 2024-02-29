@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqqddbwq2bfw1"]
+
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/parallax.gd" id="1_o8dmy"]
+[ext_resource type="Texture2D" uid="uid://cyi1hxey17vrp" path="res://assets/resources/media/images/environment/ground/ground.png" id="2_l4378"]
+
+[node name="left-earth" type="ParallaxLayer"]
+motion_mirroring = Vector2(8400, 0)
+script = ExtResource("1_o8dmy")
+speed = -480.0
+
+[node name="view" type="Sprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_l4378")
+centered = false
+flip_h = true

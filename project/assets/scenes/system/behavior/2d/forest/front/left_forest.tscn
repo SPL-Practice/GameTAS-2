@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci6ayo3mjti21"]
+
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/parallax.gd" id="1_lciwv"]
+[ext_resource type="Texture2D" uid="uid://dhgdhwtcmifm4" path="res://assets/resources/media/images/environment/forest/small.png" id="2_y8y6d"]
+[ext_resource type="Texture2D" uid="uid://dcedgppk2oui4" path="res://assets/resources/media/images/environment/forest/big1.png" id="3_yury8"]
+[ext_resource type="Texture2D" uid="uid://cxkulb74m3i5a" path="res://assets/resources/media/images/environment/forest/big2.png" id="4_homoa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkkl5"]
+
+[node name="left-forest-front" type="ParallaxLayer"]
+motion_mirroring = Vector2(7200, 0)
+script = ExtResource("1_lciwv")
+speed = -480.0
+
+[node name="small" type="Sprite2D" parent="."]
+modulate = Color(0.596078, 0.596078, 0.596078, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("2_y8y6d")
+centered = false
+offset = Vector2(0, 1900)
+flip_h = true
+
+[node name="big-1" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.498039, 0.498039, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("3_yury8")
+centered = false
+offset = Vector2(600, 1650)
+flip_h = true
+
+[node name="big-2" type="Sprite2D" parent="."]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+material = SubResource("CanvasItemMaterial_mkkl5")
+texture = ExtResource("4_homoa")
+centered = false
+offset = Vector2(1500, 1800)
+flip_h = true

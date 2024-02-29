@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://csyhrwdkvxwn3"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/main.gd" id="1_jyepa"]
-[ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/blocks/blocks.tscn" id="2_c55r2"]
-[ext_resource type="PackedScene" uid="uid://hydcls1ykpa3" path="res://assets/scenes/system/scenes/background/parallax.tscn" id="2_t4w00"]
-[ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/ui/elements/core/emitter/server.tscn" id="5_gdrto"]
-[ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/scenes/pause.tscn" id="6_j2vgm"]
-[ext_resource type="PackedScene" uid="uid://bl2luv0tuijuo" path="res://assets/scenes/system/ui/ui.tscn" id="10_24f7k"]
+[ext_resource type="PackedScene" uid="uid://fm3mlkh7a0yq" path="res://assets/scenes/actors/progression/blocks.tscn" id="2_c55r2"]
+[ext_resource type="PackedScene" uid="uid://hydcls1ykpa3" path="res://assets/scenes/system/behavior/2d/parallax.tscn" id="2_t4w00"]
+[ext_resource type="PackedScene" uid="uid://dm1b0hwabwiwc" path="res://assets/scenes/system/behavior/ui/emitter/server.tscn" id="5_gdrto"]
+[ext_resource type="PackedScene" uid="uid://dcet64m1de7lb" path="res://assets/scenes/system/files/pause.tscn" id="6_j2vgm"]
+[ext_resource type="PackedScene" uid="uid://bl2luv0tuijuo" path="res://assets/scenes/ui/ui.tscn" id="10_24f7k"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyepa")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PaPresent"
-run/main_scene="res://assets/scenes/system/ui/screens/start.tscn"
+run/main_scene="res://assets/scenes/ui/screens/start.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 boot_splash/bg_color=Color(0.0509804, 0.0666667, 0.0901961, 1)
 config/icon="res://assets/resources/media/images/logo/game/actual.svg"
@@ -19,7 +19,7 @@ boot_splash/minimum_display_time=2000
 
 [autoload]
 
-Global="*res://assets/scripts/system/global.gd"
+Global="*res://assets/scripts/core/global.gd"
 
 [display]
 

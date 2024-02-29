@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://tfa1cpk6v7en"]
+
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/progression/conveyor/progressor.gd" id="1_p3upu"]
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/progression/conveyor/conveyor.gd" id="1_sx0lr"]
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/progression/conveyor/filler.gd" id="2_n8wdk"]
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/progression/conveyor/storage.gd" id="2_s0t3k"]
+
+[node name="conveyor" type="Node2D"]
+script = ExtResource("1_sx0lr")
+
+[node name="storage" type="Node2D" parent="."]
+script = ExtResource("2_s0t3k")
+
+[node name="progressor" type="Node" parent="."]
+script = ExtResource("1_p3upu")
+
+[node name="filler" type="Node" parent="."]
+script = ExtResource("2_n8wdk")

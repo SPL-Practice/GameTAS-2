@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf3b71yscoyvb"]
+
+[ext_resource type="SpriteFrames" uid="uid://bwt12rdpjj2xg" path="res://assets/resources/runtime/templates/frames/santa.tres" id="1_7huul"]
+[ext_resource type="PackedScene" uid="uid://dpji5fu40yt6w" path="res://assets/scenes/actors/player/present.tscn" id="2_j5nah"]
+[ext_resource type="SpriteFrames" uid="uid://eyp4qyyalsyw" path="res://assets/resources/media/video/frames/player_model.tres" id="3_kfnqq"]
+
+[node name="santa" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("1_7huul")
+frame = 8
+frame_progress = 1.0
+
+[node name="present" type="Node2D" parent="."]
+position = Vector2(0, 150)
+
+[node name="body" parent="present" instance=ExtResource("2_j5nah")]
+collision_mask = 5
+score_path = "../../../../../../ui/menu/content/score"
+
+[node name="toboggan" type="AnimatedSprite2D" parent="."]
+position = Vector2(358, 0)
+sprite_frames = ExtResource("3_kfnqq")
+autoplay = "default"
+frame_progress = 0.026282

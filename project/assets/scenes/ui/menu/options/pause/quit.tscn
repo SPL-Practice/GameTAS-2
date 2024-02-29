@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://df6m8g6ffa8ad"]
+
+[ext_resource type="Shortcut" uid="uid://ce4goulx6k06x" path="res://assets/resources/runtime/templates/macro/shortcuts/menu/quit.tres" id="1_ihjod"]
+[ext_resource type="Script" path="res://assets/scripts/ui/options/quit.gd" id="2_yyi3j"]
+
+[node name="quit" type="Button"]
+focus_neighbor_top = NodePath("../options")
+focus_neighbor_right = NodePath("../options")
+focus_previous = NodePath("../options")
+shortcut = ExtResource("1_ihjod")
+script = ExtResource("2_yyi3j")
+
+[connection signal="pressed" from="." to="." method="_on_quit"]
