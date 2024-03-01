@@ -6,40 +6,41 @@ extends Node
 
 var storage
 var generator
+var compare
 
-func last_blocks() -> void:
-	var last = storage.get_last()
-	var block = generator.generate()
-	storage.append_block(block, last, interval)
-	
-func first_blocks() -> void:
-	var first = storage.get_first()
-	var block = generator.generate()
-	storage.push_front_block(block, first, interval)
-
-func first_bounds() -> void:
-	var first = storage.get_first()
-	var edge = first.get_center() + offset
-	
-	if first.position.x > edge:
-		storage.drop_front()
-		last_blocks()
-		
-func last_bounds() -> void:
-	var last = storage.get_last()
-	var edge = last.get_center() + offset
-	
-	if last.position.x < edge:
-		storage.drop_back()
-		first_blocks()
-
-func check_out_of_bounds(speed) -> void:
-	if (speed > 0):
-		first_bounds()
+func set_direction(speed: float) -> void:
+	if speed < 0:
+		storage.flow.x = -1
+		compare = func(x, edge): return x < edge
+		storage.target_last_block()
 	else:
-		last_bounds()
+		storage.flow.x = 1
+		compare = func(x, edge): return x >= edge
+		storage.target_start_block()
+		storage.add_elements_offset_size()
+		
+	storage.set_elements_offset()
+		
 
-func progress(speed) -> void:
-	check_out_of_bounds(speed)
+func _iterate() -> void:
+	var current = storage.get_current()
+	var previous = storage.get_previous()
+	var direction = storage.get_opposite_direction()
+	current.align_by_edge(previous, direction, interval)
+	storage.next_element()
+
+func _determine_scroll_end() -> void:
+	var target = storage.get_current()
+	var edge = storage.total_offset
+	var x = target.position.x
+	
+	if compare.call(x, edge):
+		_iterate()
+
+func scroll(speed) -> void:
 	for block in storage.rendering:
 		block.position.x += speed
+
+func progress(speed) -> void:
+	_determine_scroll_end()
+	scroll(speed)

@@ -1,44 +1,55 @@
 extends Node2D
 
+var total_offset: float = 0
 # Storage controls rendering scene nodes
 var rendering: Array[Node2D] = []
-var order = 0
+# Element pointers: previous, current
+var head: Vector2i
+var flow: Vector2i
 
-func get_current(index: int):
-	return rendering[index - 1]
+func set_elements_offset():
+	total_offset = rendering[head.y].position.x
+
+func add_elements_offset_size():
+	total_offset += rendering[head.y].get_center()
+
+func target_start_block():
+	head = Vector2i(flow.y - 1, 0)
+
+func target_last_block():
+	head = Vector2i(0, flow.y - 1)
+
+func next_element():
+	var next = get_next_head()
+	head.x = head.y
+	head.y = next
+
+func get_next_head() -> int:
+	var next = head.y + flow.x
+	if next < 0:
+		next = flow.y - 1
+	else:
+		next = next % flow.y
+	return next
+
+func get_current():
+	return rendering[head.y]
+	
+func get_previous():
+	return rendering[head.x]
 
 func get_first():
 	return rendering[0]
-	
-func get_last():
-	return rendering[-1]
 
-func drop_front():
-	var first = rendering.pop_front()
-	remove_child(first)
-	first.queue_free()
-	
-func drop_back():
-	var first = rendering.pop_back()
-	remove_child(first)
-	first.queue_free()
+func get_opposite_direction():
+	return -flow.x
 
-func add_block(block):
-	block.name = block.name + "_" + str(order)
-	add_child(block)
-	rendering.append(block)
-	order += 1
-	
 func push_block(block):
-	block.name = block.name + "_" + str(order)
+	block.name = block.name + "_" + str(flow.y)
 	add_child(block)
 	rendering.push_front(block)
-	order += 1
-
-func push_front_block(block, current, offset: float):
-	block.push_to_edge(current, offset)
+	flow.y += 1
+	
+func push_front_block(block, target, interval: float):
+	block.push_to_edge(target, interval)
 	push_block(block)
-
-func append_block(block, current, offset: float):
-	block.append_to_edge(current, offset)
-	add_block(block)
