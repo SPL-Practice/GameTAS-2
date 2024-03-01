@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bat43suoo1v7w"]
+
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/score.gd" id="1_hnadu"]
+[ext_resource type="Shape2D" uid="uid://d33bvdvljtsrq" path="res://assets/resources/runtime/templates/geometry/warp.tres" id="2_g1vk5"]
+[ext_resource type="Texture2D" uid="uid://bmblfe5g11hev" path="res://assets/resources/media/images/logo/game/actual.svg" id="2_ijema"]
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/timing.gd" id="2_trhy6"]
+[ext_resource type="Script" path="res://assets/scripts/actors/environment/collision.gd" id="3_rv5bv"]
+
+[node name="hits" type="Node2D"]
+
+[node name="timing" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("2_trhy6")
+
+[node name="view" type="Sprite2D" parent="timing"]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ijema")
+
+[node name="flue" type="Area2D" parent="timing"]
+process_mode = 4
+visible = false
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_hnadu")
+
+[node name="shape" type="CollisionShape2D" parent="timing/flue"]
+position = Vector2(-3, 680)
+shape = ExtResource("2_g1vk5")
+
+[node name="warp" type="Area2D" parent="timing"]
+visible = false
+position = Vector2(-2, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_rv5bv")
+
+[node name="shape" type="CollisionShape2D" parent="timing/warp"]
+process_mode = 4
+position = Vector2(-1, 680)
+shape = ExtResource("2_g1vk5")
+debug_color = Color(0.776471, 0.0431373, 0, 0.419608)
+
+[node name="shape" type="CollisionShape2D" parent="timing"]
+visible = false
+position = Vector2(-3.5, 180)
+shape = ExtResource("2_g1vk5")
+debug_color = Color(0.0745098, 0.65098, 0, 0.419608)
+
+[node name="over" type="AudioStreamPlayer" parent="."]
+
+[connection signal="area_entered" from="timing" to="timing" method="_activate_flue"]
+[connection signal="area_exited" from="timing" to="timing" method="_deactivate_flue"]
+[connection signal="body_entered" from="timing" to="timing" method="_activate_flue"]
+[connection signal="body_exited" from="timing" to="timing" method="_deactivate_flue"]
+[connection signal="body_entered" from="timing/flue" to="timing/flue" method="_on_receive"]
+[connection signal="body_entered" from="timing/warp" to="timing/warp" method="_on_player_collide"]

@@ -5,7 +5,7 @@ func dead_zone(x: float, y: float):
 	return x_area and y >= 3600 and y <= 4125
 
 func tick(tact: Tick):
-	var cursor = tact.blackboard.get_value('mouse')
+	var cursor = tact.blackboard.get_value('cursor')
 	if dead_zone(cursor.x, cursor.y):
 		return OK
 		

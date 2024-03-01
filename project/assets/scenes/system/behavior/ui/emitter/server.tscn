@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm1b0hwabwiwc"]
+
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/ui/emitter/server.gd" id="1_d3iui"]
+
+[node name="server" type="Node"]
+script = ExtResource("1_d3iui")

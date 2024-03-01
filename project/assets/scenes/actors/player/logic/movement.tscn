@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu40m17qroydn"]
+
+[ext_resource type="Script" path="res://addons/godot-behavior-tree-plugin/behavior_tree.gd" id="1_beia3"]
+[ext_resource type="Script" path="res://addons/godot-behavior-tree-plugin/selector.gd" id="2_pq0ed"]
+[ext_resource type="Script" path="res://assets/scripts/actors/behavior/movement/reset.gd" id="3_p48ai"]
+[ext_resource type="Script" path="res://assets/scripts/actors/behavior/movement/press.gd" id="4_bwcal"]
+
+[node name="movement" type="Node"]
+script = ExtResource("1_beia3")
+
+[node name="behavior" type="Node" parent="."]
+script = ExtResource("2_pq0ed")
+
+[node name="reset" type="Node" parent="behavior"]
+script = ExtResource("3_p48ai")
+
+[node name="press" type="Node" parent="behavior"]
+script = ExtResource("4_bwcal")

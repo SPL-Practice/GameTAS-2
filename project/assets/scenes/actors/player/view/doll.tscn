@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3uiv8kngspwj"]
+
+[ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/doll.gd" id="1_rd275"]
+[ext_resource type="PackedScene" uid="uid://bf3b71yscoyvb" path="res://assets/scenes/actors/player/view/santa.tscn" id="2_cclrq"]
+[ext_resource type="Script" path="res://addons/godot-behavior-tree-plugin/blackboard.gd" id="3_m6a27"]
+[ext_resource type="PackedScene" uid="uid://bu40m17qroydn" path="res://assets/scenes/actors/player/movement.tscn" id="4_twi8q"]
+
+[node name="doll" type="Node2D"]
+script = ExtResource("1_rd275")
+
+[node name="santa" parent="." instance=ExtResource("2_cclrq")]
+
+[node name="blackboard" type="Node" parent="."]
+script = ExtResource("3_m6a27")
+
+[node name="movement" parent="." instance=ExtResource("4_twi8q")]
