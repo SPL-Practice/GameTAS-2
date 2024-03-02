@@ -1,0 +1,28 @@
+<lint-module
+    format="1"
+    dir="F:\Aleksandr\misc\Development\Projects\GameTAS-2\project\android\build"
+    name=":"
+    type="APP"
+    maven=":build:"
+    gradle="7.2.1"
+    buildFolder="build"
+    bootClassPath="F:\Aleksandr\Programs\Work\Editors\IDE\Android\SDK\platforms\android-33\android.jar;F:\Aleksandr\Programs\Work\Editors\IDE\Android\SDK\build-tools\33.0.2\core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-33"
+    neverShrinking="true">
+  <lintOptions
+      disable="MissingTranslation,UnusedResources"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="MissingTranslation"
+        severity="IGNORE" />
+      <severity
+        id="UnusedResources"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

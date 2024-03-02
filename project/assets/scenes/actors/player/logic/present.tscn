@@ -58,12 +58,11 @@ collision_mask = 0
 script = ExtResource("1_2j4y2")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6500)
+position = Vector2(0, 4500)
 shape = ExtResource("2_p8b7d")
 disabled = true
 
 [node name="explosion" parent="." instance=ExtResource("3_0jdey")]
-scale = Vector2(16, 16)
 emitting = false
 
 [node name="view" type="AnimatedSprite2D" parent="."]

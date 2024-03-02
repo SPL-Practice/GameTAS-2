@@ -165,6 +165,7 @@ size_flags_horizontal = 8
 text = "Aminov  Aleksandr"
 
 [node name="settings" type="Panel" parent="menu/content/options/elements"]
+visible = false
 custom_minimum_size = Vector2(3000, 300)
 layout_mode = 2
 size_flags_horizontal = 8
