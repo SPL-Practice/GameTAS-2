@@ -201,7 +201,7 @@ step = 0.01
 default_volume = 0.65
 
 [node name="pause" type="Panel" parent="menu/content"]
-custom_minimum_size = Vector2(500, 500)
+custom_minimum_size = Vector2(750, 750)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -219,6 +219,7 @@ texture_normal = ExtResource("9_fxx3r")
 texture_pressed = ExtResource("10_ftk8h")
 texture_hover = ExtResource("10_ftk8h")
 texture_focused = ExtResource("10_ftk8h")
+stretch_mode = 0
 
 [node name="pause" type="TextureButton" parent="menu/content/pause"]
 layout_mode = 1
@@ -232,6 +233,7 @@ texture_normal = ExtResource("11_mgn31")
 texture_pressed = ExtResource("12_ywwt6")
 texture_hover = ExtResource("12_ywwt6")
 texture_focused = ExtResource("12_ywwt6")
+stretch_mode = 0
 
 [node name="options" parent="menu/content/pause" node_paths=PackedStringArray("to_switch") instance=ExtResource("5_l5uqk")]
 to_switch = NodePath("../../options")

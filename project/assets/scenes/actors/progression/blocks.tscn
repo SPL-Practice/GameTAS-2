@@ -12,7 +12,7 @@ conveyor_speed = 8.0
 [node name="player" parent="." instance=ExtResource("5_tr7sf")]
 
 [node name="houses" parent="." instance=ExtResource("2_4rpl7")]
-position = Vector2(0, 2650)
-offset = Vector3(0, 0, -6200)
+position = Vector2(0, 2450)
+offset = Vector3(0, 0, -7000)
 
 [node name="generator" parent="houses" instance=ExtResource("4_qpj6u")]
