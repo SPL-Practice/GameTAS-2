@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5cjky65culkm"]
+
+[ext_resource type="AudioStream" uid="uid://cjgk24gdsc7sl" path="res://assets/resources/media/ost/sounds/explosion/in.wav" id="1_7bvht"]
+[ext_resource type="Script" path="res://assets/scripts/core/behavior/2d/audio.gd" id="1_rdce3"]
+[ext_resource type="AudioStream" uid="uid://e7mwriixjumi" path="res://assets/resources/media/ost/sounds/explosion/out.wav" id="2_hiv61"]
+[ext_resource type="AudioStream" uid="uid://dyaxymfoxgnjg" path="res://assets/resources/media/ost/sounds/pickup/score1.wav" id="3_p3uc1"]
+[ext_resource type="AudioStream" uid="uid://1aukvsyhkw81" path="res://assets/resources/media/ost/sounds/pickup/score2.wav" id="4_tcmio"]
+
+[node name="audio" type="Node"]
+script = ExtResource("1_rdce3")
+
+[node name="explosion" type="Node" parent="."]
+
+[node name="in" type="AudioStreamPlayer" parent="explosion"]
+stream = ExtResource("1_7bvht")
+volume_db = -30.0
+
+[node name="out" type="AudioStreamPlayer" parent="explosion"]
+stream = ExtResource("2_hiv61")
+volume_db = -20.0
+
+[node name="score" type="Node" parent="."]
+
+[node name="small" type="AudioStreamPlayer" parent="score"]
+stream = ExtResource("3_p3uc1")
+volume_db = -15.0
+
+[node name="large" type="AudioStreamPlayer" parent="score"]
+stream = ExtResource("4_tcmio")
+volume_db = -15.0

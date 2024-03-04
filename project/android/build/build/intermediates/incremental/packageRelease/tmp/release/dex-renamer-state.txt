@@ -1,4 +1,0 @@
-#Sat Mar 02 18:18:09 MSK 2024
-base.0=F\:\\Aleksandr\\misc\\Development\\Projects\\GameTAS-2\\project\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

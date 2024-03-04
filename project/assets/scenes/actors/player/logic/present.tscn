@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpji5fu40yt6w"]
+[gd_scene load_steps=10 format=3 uid="uid://dpji5fu40yt6w"]
 
 [ext_resource type="Script" path="res://assets/scripts/actors/controllers/player/model.gd" id="1_2j4y2"]
 [ext_resource type="SpriteFrames" uid="uid://bkh3ee21fua66" path="res://assets/resources/media/video/frames/present_bomb.tres" id="2_lim1i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btkd7mknpvqab" path="res://assets/scenes/system/behavior/2d/particles.tscn" id="3_0jdey"]
 [ext_resource type="Animation" uid="uid://dcnevutjqd6xx" path="res://assets/resources/media/video/animation/player/player_present_falling_down.res" id="4_iaef3"]
 [ext_resource type="PackedScene" uid="uid://dpfr1bnlveuvd" path="res://assets/scenes/system/behavior/ui/emitter/client.tscn" id="5_3yk4e"]
+[ext_resource type="PackedScene" uid="uid://b5cjky65culkm" path="res://assets/scenes/system/behavior/2d/audio.tscn" id="7_pbtf4"]
 
 [sub_resource type="Animation" id="Animation_omn52"]
 length = 0.001
@@ -80,6 +81,8 @@ server_path = "../../../../../../../ui/menu/restart"
 
 [node name="hit" parent="." instance=ExtResource("5_3yk4e")]
 server_path = "../../../../../../../pause"
+
+[node name="audio" parent="." instance=ExtResource("7_pbtf4")]
 
 [connection signal="hit" from="." to="restart" method="_submit"]
 [connection signal="hit" from="." to="hit" method="_submit"]

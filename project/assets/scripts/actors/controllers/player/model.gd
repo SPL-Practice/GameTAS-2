@@ -6,6 +6,7 @@ signal hit
 @onready var animation = $animation
 @onready var view = $view
 @onready var explosion = $explosion
+@onready var audio = $audio
 
 var score
 var doll
@@ -36,7 +37,11 @@ func _animation_end():
 
 func collide():
 	hit.emit()
+	audio.explosion_type = "out"
+	
 	
 func hide_by_flue():
 	view.hide()
 	explosion.hide()
+	audio.explosion_type = "in"
+	audio.pickup_score()
