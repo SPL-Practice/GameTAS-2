@@ -4,3 +4,4 @@ extends Area2D
 
 func _on_receive(hero: CollisionObject2D):
 	hero.score.append(bonus)
+	hero.hide_by_flue()

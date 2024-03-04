@@ -8,6 +8,7 @@
 script = ExtResource("1_r3r7y")
 
 [node name="view" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_o0mp1")
 
 [node name="flue" type="Area2D" parent="."]
@@ -15,5 +16,5 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="shape" type="CollisionShape2D" parent="flue"]
-position = Vector2(262, -90)
+position = Vector2(327, -116)
 shape = ExtResource("3_dbv6e")

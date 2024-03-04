@@ -14,7 +14,8 @@ collision_mask = 8
 script = ExtResource("2_trhy6")
 
 [node name="view" type="Sprite2D" parent="timing"]
-modulate = Color(0.254902, 0.254902, 0.254902, 1)
+visible = false
+position = Vector2(0, -200)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_ijema")
 
